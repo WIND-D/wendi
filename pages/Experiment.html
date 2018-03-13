@@ -6,204 +6,195 @@
 	    <!-- <meta name="viewport" content="user-scalable = yes"> -->
 
 	    <title>Reasons to Remix</title>
-		<meta name="author" content="Nadieh Bremer">
+		<meta name="author" content="Wendi Ding">
 		<meta name="description" content="Remix of Reasons to logo">
 
 		<!-- JavaScript files -->
 		<!--<script src="js/d3.min.js"></script>-->
 		<script src="https://d3js.org/d3.v4.min.js"></script>
-		<script src="snap.min.js"></script>
+		<script src="snap.svg.js"></script>
+		
 	</head>
 	<body>
 
 		<div id="chart" style="text-align: center;"></div>
-		<script src="main.js"></script>
-    <script>
-    var margin = {
-	top: 50,
-	right: 50,
-	bottom: 50,
-	left: 50
-}
-var width = 700 - margin.left - margin.right;
-var height = 875 - margin.top - margin.bottom;
-
-var svg = d3.select("#chart").append("svg")
-	.attr("id", "svg-r")
-	.attr("width", width + margin.left + margin.right)
-	.attr("height", height + margin.top + margin.bottom)
-	.append("g")
-	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-////////////////////////////////////////////////////////////////////
-///////////// Calculate hexagon centers and put into array /////////
-////////////////////////////////////////////////////////////////////
-
-//Initial guess
-var mapColumns = Math.floor(width/20),
-	mapRows = Math.floor(height/30);
-//The maximum radius the hexagons can have to still fit the screen
-var hexRadius = round2( d3.min([width/(Math.sqrt(3)*mapColumns), height/(mapRows*1.5)]) );
-
-//Initialize hexagon variables
-var SQRT3 = round2( Math.sqrt(3) ),
-	hexWidth = SQRT3 * hexRadius,
-	hexHeight = 2 * hexRadius;
-var hexagonPoly = [[0,-1],[SQRT3/2,0.5],[0,1],[-SQRT3/2,0.5],[-SQRT3/2,-0.5],[0,-1],[SQRT3/2,-0.5]];
-var hexagonPath = "m" + hexagonPoly.map(function(p) {
-		return [p[0]*hexRadius, p[1]*hexRadius].join(',');
-	}).join('l') + "z";
-
-//Recalculate the columns and rows now that we know the sizes
-mapColumns = Math.floor(width/hexWidth);
-mapRows = Math.floor(height/hexHeight/1.5*2);
-//console.log(mapColumns, mapRows);
-
-//Calculate the. enter points of the hexagons in the grid
-var points = [];
-for (var i = 0; i < mapRows; i++) {
-	for (var j = 0; j < mapColumns; j++) {
-		var a;
-		var b = (3 * i) * hexRadius / 2;
-		if (i % 2 === 0) {
-			a = SQRT3 * j * hexRadius;
-		} else {
-			a = SQRT3 * (j - 0.5) * hexRadius;
-		}//else
-		points.push({x: round2(a), y: round2(b)});
-	}//for j
-}//for i
-
-////////////////////////////////////////////////////////////////////
-//////////////////////////// Create scales /////////////////////////
-////////////////////////////////////////////////////////////////////
-
-//Based on country
-//var colorScale = d3.scaleOrdinal()
-//	.domain(d3.range(8))
-//	.range(["#EFB605", "#E47D06", "#DB0131", "#AF0158", "#7F378D", "#3465A8", "#0AA174", "#7EB852"]);
-
-var colorScale = d3.scaleLinear()
-	.domain(d3.range(8))
-	.range(["#EFB605", "#E47D06", "#DB0131", "#AF0158", "#7F378D", "#3465A8", "#0AA174", "#7EB852"]);
-
-//Round number to 2 behind the decimal
-function round2(num) {
-	return (Math.round((num + 0.00001) * 100)/100);
-}//round2
-
-////////////////////////////////////////////////////////////////////
-/////////////////////// Reasons to R svg path //////////////////////
-////////////////////////////////////////////////////////////////////
-
-var reasonsPath = "M-75.157-177.185 c68.52 0.03 137.044 -0.02 205.567 0.014 7.13 0.24 14.358 -0.24 21.43 1.04 19.93 0.7 39.707 4 59.195 8.25 2.29 0.62 4.64 1.14 6.943 1.8 10.443 2.44 20.592 5.93 30.64 9.6 2.776 1.1 5.554 2.19 8.33 3.27 7.343 3.13 14.624 6.43 21.765 10.07 6.45 3.47 12.86 7.03 19.016 10.99 19.29 12.314 37.1 27.292 50.81 45.73 8.76 11.374 16.29 23.674 22.58 36.58 3.6 7.6 6.96 15.335 9.67 23.316 0.6 1.797 1.19 3.597 1.85 5.4 0.38 1.5 0.82 3.01 1.29 4.522 3.22 10.86 5.45 22 7.11 33.22 0.72 4.285 0.84 8.65 1.18 12.99 1.54 9.46 0.85 19.12 1.002 28.67 -0.198 6.685 0.247 13.45 -1.02 20.06 -0.37 4.32 -0.418 8.7 -1.25 12.958 -1.8 13.15 -4.668 26.194 -8.86 38.797 -0.464 1.44 -0.923 2.88 -1.384 4.32 -8.845 24.21 -21.43 47.2 -38.335 66.74 -15.066 17.756 -33.29 32.72 -53.19 44.783 -8.55 5.05 -17.32 9.76 -26.4 13.826 -7.09 3.184 -14.3 6.135 -21.636 8.7 -1.8 0.63 -3.63 1.25 -5.425 1.92 -5.41 1.636 -10.82 3.32 -16.24 4.94 65.8 91.64 130.98 183.72 196.84 275.316 -37.696 0.215 -75.394 0.04 -113.11 0.11 -12.89 -0.233 -25.81 0.45 -38.698 -0.376 -12.807 -19.23 -26.627 -37.78 -39.81 -56.76 C151.597 390.39 78.51 287.1 5.43 183.79 c37.805 -0.488 75.627 -0.07 113.43 -0.274 15.93 -0.2 31.84 -2.12 47.35 -5.788 1.87 -0.49 3.76 -0.954 5.64 -1.466 7.6 -2.09 14.98 -4.927 22.21 -8.042 25.266 -11.477 47.46 -30.916 59.08 -56.44 12.62 -29.454 12.89 -63.338 4.137 -93.888 -0.677 -1.858 -1.31 -3.742 -1.96 -5.598 -7.967 -21.907 -24.39 -40.024 -44.38 -51.704 -18.434 -10.67 -39.21 -16.72 -60.21 -19.68 -23.92 -3.64 -48.16 -2.575 -72.27 -2.72 H-75.16 c0.015 -38.46 0.015 -76.93 0.005 -115.383 z";
-
-//Offset the R by a certain amount so it is completely on the screen
-var rOffsetX = 125 - margin.left,
-	rOffsetY = 233.2 - margin.top;
-
-//svg.append("path")
-//	.attr("transform", "translate(" + rOffsetX + "," + rOffsetY + ")")
-//	.attr("d", reasonsPath)
-//	.style("fill", "none");
-//	.style("stroke", "black");
-
-////////////////////////////////////////////////////////////////////
-//////////////////////// Initialize Snap.svg ///////////////////////
-////////////////////////////////////////////////////////////////////
-
-//Needed so I can use Snap.path.isPointInside later on to determine which hexagons lie within the reasons to R svg shape
-var s = Snap("#svg-r");
-
-//var p  = s.path( reasonsPath ).transform("t" + rOffsetX + "," + rOffsetY);
-//p.attr({
-//	fill: "none",
-//	stroke: "black"
-//});
-
-/////////////////////////////////////////////////////////////////
-/////////////////////// Add artist text /////////////////////////
-/////////////////////////////////////////////////////////////////
-
-//Group for text
-var titleWrapper = svg.append("g")
-	.attr("class", "title-group")
-	.attr("transform", "translate(" + rOffsetX + "," + rOffsetY + ")");
-
-//By
-titleWrapper.append("text")
-	.attr("transform", "rotate(-90 249.604 301.21)")
-	.style("fill", "#1D1D1B")
-	.style("font-size", 32)
-	.style("font-family", "'Helvetica-Bold', sans-serif")
-	.text("by:");
-
-//Nadieh
-titleWrapper.append("text")
-	.attr("transform", "rotate(-90 221.746 273.53)")
-	.style("fill", "#CA2326")
-	.style("font-size", 32)
-	.style("font-family", "'Helvetica-Bold', sans-serif")
-	.text("Nadieh Bremer");
-
-/////////////////////////////////////////////////////////////////
-/////////////////////// Create hexagons /////////////////////////
-/////////////////////////////////////////////////////////////////
-
-//Create a wrapper group for all hexagons
-var hexWrapper = svg.append("g")
-	.attr("class", "hexagon-wrapper")
-	.style("isolation", "isolate");
-
-//Create a group for each hexagon that is displaced so that the scaling later is easier
-//But only those that lie inside the reasons to R
-var hexGroup = hexWrapper.selectAll(".hexagon")
-	.data(points.filter(function(d) {
-		return Snap.path.isPointInside( reasonsPath, d.x-rOffsetX, d.y-rOffsetY)
-	}))
-	.enter().append("g")
-	.attr("class", "hexagon")
-	.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-
-//Create the actual hexagonal SVG paths
-var hex = hexGroup.append("path")
-	.attr("class", "hexagon-path")
-	.attr("transform", function(d) { return "scale(" + (Math.random()*2) + ")"; })
-	.attr("d", function(d) { return hexagonPath; })
-	.style("mix-blend-mode", "multiply")
-	.style("opacity", function(d) { return Math.min(1, 0.2+Math.random()*2); })
-	.style("fill", function(d,i) { return colorScale(Math.floor(Math.random()*8)); });
-
-//Make it change
-hex.transition().duration(100).on("end", grow);
-
-/////////////////////////////////////////////////////////////////
-//////////// Random scale & opacity change function /////////////
-/////////////////////////////////////////////////////////////////
-
-function grow() {
-	//Let each hexagon grow and shrink randomly
-	d3.select(this)
-		.transition("growing").duration(1000 + 4000*Math.random())
-		.delay(function(d,i) { return Math.random() * 1000; })
+		<script>
+				var margin = {
+		top: 50,
+		right: 50,
+		bottom: 50,
+		left: 50
+	}
+	var width = 700 - margin.left - margin.right;
+	var height = 875 - margin.top - margin.bottom;
+	
+	var svg = d3.select("#chart").append("svg")
+		.attr("id", "svg-r")
+		.attr("width", width + margin.left + margin.right)
+		.attr("height", height + margin.top + margin.bottom)
+		.append("g")
+		.attr("transform", "translate(" + margin.left + "," + margin.top + ")"); 
+	
+	////////////////////////////////////////////////////////////////////
+	///////////// Calculate hexagon centers and put into array /////////
+	////////////////////////////////////////////////////////////////////
+	
+	//Initial guess
+	var mapColumns = Math.floor(width/20),
+		mapRows = Math.floor(height/30);
+	//The maximum radius the hexagons can have to still fit the screen
+	var hexRadius = round2( d3.min([width/(Math.sqrt(3)*mapColumns), height/(mapRows*1.5)]) );
+	
+	//Initialize hexagon variables
+	var SQRT3 = round2( Math.sqrt(3) ),
+		hexWidth = SQRT3 * hexRadius,
+		hexHeight = 2 * hexRadius;
+	var hexagonPoly = [[0,-1],[SQRT3/2,0.5],[0,1],[-SQRT3/2,0.5],[-SQRT3/2,-0.5],[0,-1],[SQRT3/2,-0.5]];
+	var hexagonPath = "m" + hexagonPoly.map(function(p) { 
+			return [p[0]*hexRadius, p[1]*hexRadius].join(','); 
+		}).join('l') + "z";
+	
+	//Recalculate the columns and rows now that we know the sizes
+	mapColumns = Math.floor(width/hexWidth);
+	mapRows = Math.floor(height/hexHeight/1.5*2);
+	//console.log(mapColumns, mapRows);
+	
+	//Calculate the. enter points of the hexagons in the grid
+	var points = [];
+	for (var i = 0; i < mapRows; i++) {
+		for (var j = 0; j < mapColumns; j++) {
+			var a;
+			var b = (3 * i) * hexRadius / 2;
+			if (i % 2 === 0) {
+				a = SQRT3 * j * hexRadius;
+			} else {
+				a = SQRT3 * (j - 0.5) * hexRadius;
+			}//else
+			points.push({x: round2(a), y: round2(b)});
+		}//for j
+	}//for i
+	
+	////////////////////////////////////////////////////////////////////
+	//////////////////////////// Create scales /////////////////////////
+	////////////////////////////////////////////////////////////////////
+	
+	//Based on country
+	//var colorScale = d3.scaleOrdinal()
+	//	.domain(d3.range(8))
+	//	.range(["#EFB605", "#E47D06", "#DB0131", "#AF0158", "#7F378D", "#3465A8", "#0AA174", "#7EB852"]);
+	
+	var colorScale = d3.scaleLinear()
+		.domain(d3.range(8))
+		.range(["#EFB605", "#E47D06", "#DB0131", "#AF0158", "#7F378D", "#3465A8", "#0AA174", "#7EB852"]);
+	
+	//Round number to 2 behind the decimal
+	function round2(num) {
+		return (Math.round((num + 0.00001) * 100)/100);
+	}//round2
+	
+	////////////////////////////////////////////////////////////////////
+	/////////////////////// Reasons to R svg path //////////////////////
+	////////////////////////////////////////////////////////////////////
+	
+	//var reasonsPath = "M-75.157-177.185 c68.52 0.03 137.044 -0.02 205.567 0.014 7.13 0.24 14.358 -0.24 21.43 1.04 19.93 0.7 39.707 4 59.195 8.25 2.29 0.62 4.64 1.14 6.943 1.8 10.443 2.44 20.592 5.93 30.64 9.6 2.776 1.1 5.554 2.19 8.33 3.27 7.343 3.13 14.624 6.43 21.765 10.07 6.45 3.47 12.86 7.03 19.016 10.99 19.29 12.314 37.1 27.292 50.81 45.73 8.76 11.374 16.29 23.674 22.58 36.58 3.6 7.6 6.96 15.335 9.67 23.316 0.6 1.797 1.19 3.597 1.85 5.4 0.38 1.5 0.82 3.01 1.29 4.522 3.22 10.86 5.45 22 7.11 33.22 0.72 4.285 0.84 8.65 1.18 12.99 1.54 9.46 0.85 19.12 1.002 28.67 -0.198 6.685 0.247 13.45 -1.02 20.06 -0.37 4.32 -0.418 8.7 -1.25 12.958 -1.8 13.15 -4.668 26.194 -8.86 38.797 -0.464 1.44 -0.923 2.88 -1.384 4.32 -8.845 24.21 -21.43 47.2 -38.335 66.74 -15.066 17.756 -33.29 32.72 -53.19 44.783 -8.55 5.05 -17.32 9.76 -26.4 13.826 -7.09 3.184 -14.3 6.135 -21.636 8.7 -1.8 0.63 -3.63 1.25 -5.425 1.92 -5.41 1.636 -10.82 3.32 -16.24 4.94 65.8 91.64 130.98 183.72 196.84 275.316 -37.696 0.215 -75.394 0.04 -113.11 0.11 -12.89 -0.233 -25.81 0.45 -38.698 -0.376 -12.807 -19.23 -26.627 -37.78 -39.81 -56.76 C151.597 390.39 78.51 287.1 5.43 183.79 c37.805 -0.488 75.627 -0.07 113.43 -0.274 15.93 -0.2 31.84 -2.12 47.35 -5.788 1.87 -0.49 3.76 -0.954 5.64 -1.466 7.6 -2.09 14.98 -4.927 22.21 -8.042 25.266 -11.477 47.46 -30.916 59.08 -56.44 12.62 -29.454 12.89 -63.338 4.137 -93.888 -0.677 -1.858 -1.31 -3.742 -1.96 -5.598 -7.967 -21.907 -24.39 -40.024 -44.38 -51.704 -18.434 -10.67 -39.21 -16.72 -60.21 -19.68 -23.92 -3.64 -48.16 -2.575 -72.27 -2.72 H-75.16 c0.015 -38.46 0.015 -76.93 0.005 -115.383 z";
+var reasonsPath = "M477.41,298.75q0,123.39-70.24,189T204.31,553.39H62.81V53.68H219.69q122.35,0,190,64.6T477.41,298.75Zm-110.06,2.73q0-161-142.19-161H168.77V465.89h45.45Q367.34,465.89,367.35,301.48Z"
+	//Offset the R by a certain amount so it is completely on the screen
+	var rOffsetX = 125 - margin.left,
+		rOffsetY = 150 - margin.top;
+		
+	//svg.append("path")
+	//	.attr("transform", "translate(" + rOffsetX + "," + rOffsetY + ")")
+	//	.attr("d", reasonsPath)
+	//	.style("fill", "none")
+	//	.style("stroke", "black");
+	
+	////////////////////////////////////////////////////////////////////
+	//////////////////////// Initialize Snap.svg ///////////////////////
+	////////////////////////////////////////////////////////////////////
+	
+	//Needed so I can use Snap.path.isPointInside later on to determine which hexagons lie within the reasons to R svg shape
+	var s = Snap("#svg-r");
+	
+	//var p  = s.path( reasonsPath ).transform("t" + rOffsetX + "," + rOffsetY);
+	//p.attr({
+	//	fill: "none",
+	//	stroke: "black"
+	//});
+	
+	/////////////////////////////////////////////////////////////////
+	/////////////////////// Add artist text /////////////////////////
+	/////////////////////////////////////////////////////////////////
+	
+	//Group for text
+	var titleWrapper = svg.append("g")
+		.attr("class", "title-group")
+		.attr("transform", "translate(" + rOffsetX + "," + rOffsetY + ")");
+	
+	//By
+	titleWrapper.append("text")
+		.attr("transform", "rotate(-90 249.604 301.21)")
+		.style("fill", "#1D1D1B")
+		.style("font-size", 32)
+		.style("font-family", "'Helvetica-Bold', sans-serif")
+		.text("by:");
+	
+	//Nadieh
+	titleWrapper.append("text")
+		.attr("transform", "rotate(-90 221.746 273.53)")
+		.style("fill", "#CA2326")
+		.style("font-size", 32)
+		.style("font-family", "'Helvetica-Bold', sans-serif")
+		.text("Wendi Ding");
+	
+	/////////////////////////////////////////////////////////////////
+	/////////////////////// Create hexagons /////////////////////////
+	/////////////////////////////////////////////////////////////////
+	
+	//Create a wrapper group for all hexagons
+	var hexWrapper = svg.append("g")
+		.attr("class", "hexagon-wrapper")
+		.style("isolation", "isolate");
+	
+	//Create a group for each hexagon that is displaced so that the scaling later is easier
+	//But only those that lie inside the reasons to R
+	var hexGroup = hexWrapper.selectAll(".hexagon")
+		.data(points.filter(function(d) {
+			return Snap.path.isPointInside( reasonsPath, d.x-rOffsetX, d.y-rOffsetY)
+		}))
+		.enter().append("g")
+		.attr("class", "hexagon")
+		.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+	
+	//Create the actual hexagonal SVG paths
+	var hex = hexGroup.append("path")
+		.attr("class", "hexagon-path")
 		.attr("transform", function(d) { return "scale(" + (Math.random()*2) + ")"; })
+		.attr("d", function(d) { return hexagonPath; })
+		.style("mix-blend-mode", "multiply")
 		.style("opacity", function(d) { return Math.min(1, 0.2+Math.random()*2); })
-		.transition("shrinking").duration(1000 + 3000*Math.random())
-		.attr("transform", function(d) { return "scale(" + (Math.random()*2) + ")"; })
-		.style("opacity", function(d) { return Math.min(1, 0.2+Math.random()*2); })
-		.on("end", grow);
-}//function grow
-
-const TextToSVG = require('text-to-svg');
-const textToSVG = TextToSVG.loadSync();
-
-const attributes = {fill: 'red', stroke: 'black'};
-const options = {x: 0, y: 0, fontSize: 72, anchor: 'top', attributes: attributes};
-
-const svg = textToSVG.getSVG('hello', options);
-
-console.log(svg);
-    </script>
-
+		.style("fill", function(d,i) { return colorScale(Math.floor(Math.random()*8)); });
+	
+	//Make it change
+	hex.transition().duration(100).on("end", grow);
+	
+	/////////////////////////////////////////////////////////////////
+	//////////// Random scale & opacity change function /////////////
+	/////////////////////////////////////////////////////////////////
+	
+	function grow() {
+		//Let each hexagon grow and shrink randomly
+		d3.select(this)
+			.transition("growing").duration(1000 + 4000*Math.random())
+			.delay(function(d,i) { return Math.random() * 1000; })
+			.attr("transform", function(d) { return "scale(" + (Math.random()*2) + ")"; })
+			.style("opacity", function(d) { return Math.min(1, 0.2+Math.random()*2); })
+			.transition("shrinking").duration(1000 + 3000*Math.random())
+			.attr("transform", function(d) { return "scale(" + (Math.random()*2) + ")"; })
+			.style("opacity", function(d) { return Math.min(1, 0.2+Math.random()*2); })
+			.on("end", grow);
+	}//function grow
+	
+				</script>
+	
 	</body>
 </html>
