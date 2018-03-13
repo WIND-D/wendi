@@ -137,7 +137,7 @@ img {
 }
 
 h4{
-  font-family: "Lato", serif;
+  font-family: "open Sans", serif;
   font-size: 16px;
   font-weight: 300;
   line-height: 180%;
@@ -298,7 +298,7 @@ section.title{
 }
 .title h1{
   margin-top: 20vh;
-  font-family: "Lato",cursive;
+  font-family: "open Sans",cursive;
   font-size: 36px;
   z-index: 999;
   position: relative;
@@ -329,20 +329,20 @@ section.page{
   position: relative;
 }
 section.page h1{
-  font-family: "Lato",cursive;
+  font-family: "open Sans",cursive;
   font-weight: 400;
   font-size: 28px;
   line-height: 180%;
 }
 section.page h2{
-  font-family: "Lato",cursive;
+  font-family: "open Sans",cursive;
   font-weight: 300;
   font-size: 22px;
   margin-top: 20px;
   /*text-align: center;*/
 }
 section.page h3{
-  font-family: "Lato",cursive;
+  font-family: "open Sans",cursive;
   font-weight: 300;
   font-size: 22px;
 }
@@ -513,7 +513,7 @@ footer.end-nav .next{
 .full ul{
   width: 100%;
   font-size: 48px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'open Sans', sans-serif;
   font-weight: 400;
   /*font-variant: small-caps;*/
   text-transform: uppercase;
@@ -541,7 +541,7 @@ footer.end-nav .next{
   overflow-y: hidden;
 }
 .right{
-  font-family: 'Lato', sans-serif;
+  font-family: 'open Sans', sans-serif;
   font-weight: 100;
   line-height: 230%;
   font-size: 16px;
@@ -559,7 +559,7 @@ footer.end-nav .next{
 }
 .right b{
   font-size: 54px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'open Sans', sans-serif;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.7);
   opacity: 1;
@@ -634,7 +634,7 @@ footer.end-nav .next{
   height: auto;
 }
 .page_des h1{
-  font-family: 'Lato', sans-serif;
+  font-family: 'open Sans', sans-serif;
   font-weight: 400;
   font-size: 36px;
   float: left;
@@ -988,12 +988,12 @@ p.button.white a:hover{
 
 }
 p i{
-  font-family: 'Lato', sans-serif;
+  font-family: 'open Sans', sans-serif;
   font-weight: 300;
   font-size: 16px;
 }
 p li i{
-  font-family: 'Lato', sans-serif;
+  font-family: 'open Sans', sans-serif;
   font-weight: 300;
   font-size: 16px;
 }
@@ -1013,7 +1013,7 @@ section.lightbox-section p{
   font-size: 14px;
   margin: -10px 0 10px 10px;
   line-height: 60px;
-  font-family: Lato, serif;
+  font-family: open Sans, serif;
 }
 section.page img{
   /*box-shadow: 10px 10px 5px rgb(245,244,243);*/
