@@ -7,13 +7,13 @@ var mobileScreen = ($( window ).innerWidth() < 500 ? true : false);
 
 //Scatterplot
 var margin = {left: 150, top: 20, right: 20, bottom: 20},
-	width = Math.min($("#chart").width(), 900) - margin.left - margin.right,
-	height = width*2/3;
-			
+	width = Math.min($("#chart").width(), 1000) - margin.left - margin.right,
+	height = width*3/4;
+
 var svg = d3.select("#chart").append("svg")
 			.attr("width", (width + margin.left + margin.right))
 			.attr("height", (height + margin.top + margin.bottom));
-			
+
 var wrapper = svg.append("g").attr("class", "chordWrapper")
 			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -21,61 +21,61 @@ var wrapper = svg.append("g").attr("class", "chordWrapper")
 ///////////// Initialize Axes & Scales ///////////////
 //////////////////////////////////////////////////////
 
-var opacityCirclesN = 0.25; 
+var opacityCirclesN = 0.25;
 var opacityCirclesP = 0.8;
 
 //Set the color for each region
 var color = d3.scale.ordinal()
                     .range(["#E01A25","#EFB605", "#2074A0"])
-					.domain(["Penicilin", "Streptomycin", "Neomycin"]);		
- 
+					.domain(["Penicilin", "Streptomycin", "Neomycin"]);
+
 //Set the new x axis range
 var xScale = d3.scale.log()
 	.range([0, width])
 	.domain([10000,0.0001]) //I prefer this exact scale over the true range and then using "nice"
 	//.domain(mics.map(function(d) { return d.MIC; }))
 	//.nice();
-//Set new x-axis	
+//Set new x-axis
 var xAxis = d3.svg.axis()
     .orient("bottom")
     .tickPadding(5)
-	.scale(xScale);	
+	.scale(xScale);
 //Append the x-axis
 wrapper.append("g")
 	.attr("class", "x axis")
 	.attr("transform", "translate(" + 0 + "," + (height) + ")")
 	.call(xAxis);
-		
+
 //Set the new y axis range
 var yScale = d3.scale.ordinal()
     .domain(mics.map(function(d) { return d.Bacteria;}))
 	.rangePoints([height,0], 1)
-	//.nice();	
+	//.nice();
 var yAxis = d3.svg.axis()
 	.orient("left")
-	.scale(yScale);	
+	.scale(yScale);
 //Append the y-axis
 wrapper.append("g")
 		.attr("class", "y axis")
 		.attr("transform", "translate(" + 0 + ","  + ")")
 		.call(yAxis);
-		
+
 //Scale for the bubble size
 var rScale = d3.scale.sqrt()
 			.range([mobileScreen ? 1 : 2, mobileScreen ? 10 : 16])
-			.domain(d3.extent(mics, function(d) {return d.logMIC;}));	
-////////////////////////////////////////////////////////////	
+			.domain(d3.extent(mics, function(d) {return d.logMIC;}));
+////////////////////////////////////////////////////////////
 /////////////////// Scatterplot Circles ////////////////////
-////////////////////////////////////////////////////////////	
+////////////////////////////////////////////////////////////
 
-//Initiate the voronoi group element	
+//Initiate the voronoi group element
 var circleGroup = wrapper.append("g")
-	.attr("class", "circleWrapper"); 
+	.attr("class", "circleWrapper");
 
 
 
- 
-//Place the country circles	
+
+//Place the country circles
 wrapper.selectAll("mics")
 	.data(mics.sort(function(a,b) { return b.MIC > a.MIC; })) //Sort so the biggest circles are below
 	.enter().append("circle")
@@ -110,13 +110,13 @@ wrapper.selectAll("mics")
 		.attr('dy', 'opacityCirclesNem')
 		.attr("dx", "-0.3em")
 		.text(function(d){return d["Gram Staining"]});*/
-	
-		
-        
 
-////////////////////////////////////////////////////////////// 
-//////////////////////// Voronoi ///////////////////////////// 
-////////////////////////////////////////////////////////////// 
+
+
+
+//////////////////////////////////////////////////////////////
+//////////////////////// Voronoi /////////////////////////////
+//////////////////////////////////////////////////////////////
 
 //Initiate the voronoi function
 //Use the same variables of the data in the .x and .y as used in the cx and cy of the circle call
@@ -130,7 +130,7 @@ var voronoi = d3.geom.voronoi()
 //Initiate a group element to place the voronoi diagram in
 var voronoiGroup = wrapper.append("g")
 	.attr("class", "voronoiWrapper");
-	
+
 //Create the Voronoi diagram
 /*
 voronoiGroup.selectAll("path")
@@ -145,7 +145,7 @@ voronoiGroup.selectAll("path")
 	.style("pointer-events", "all")
 	.on("mouseover", showTooltip)
 	.on("mouseout",  removeTooltip);*/
-	
+
 
 //////////////////////////////////////////////////////
 ///////////////// Initialize Labels //////////////////
@@ -161,7 +161,7 @@ wrapper.append("g")
     .text("Inhibition Antibiotics [MIC] - Note the logarithmic scale")
     .on("mouseover", showMIC)
     .on("mouseout", removeMIC);
-    
+
     wrapper.append("g")
 	.append("text")
 	.attr("class", "x title2")
@@ -185,33 +185,33 @@ wrapper.append("g")
 	.style("font-size", (mobileScreen ? 8 : 12) + "px")
 	.attr("transform", "translate(18, 0) rotate(-90)")
 	.text("Bacteria");
-	
+
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////// Create the Legend////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 
 if (!mobileScreen) {
-	//Legend			
+	//Legend
 	var	legendMargin = {left: 5, top: 10, right: 5, bottom: 10},
 		legendWidth = 145,
 		legendHeight = 270;
-		
+
 	var svgLegend = d3.select("#legend").append("svg")
 				.attr("width", (legendWidth + legendMargin.left + legendMargin.right))
-				.attr("height", (legendHeight + legendMargin.top + legendMargin.bottom));			
+				.attr("height", (legendHeight + legendMargin.top + legendMargin.bottom));
 
 	var legendWrapper = svgLegend.append("g").attr("class", "legendWrapper")
 					.attr("transform", "translate(" + legendMargin.left + "," + legendMargin.top +")");
-		
+
 	var rectSize = 15, //dimensions of the colored square
 		rowHeight = 20, //height of a row in the legend
 		maxWidth = 144; //widht of each row
-		  
-	//Create container per rect/text pair  
-	var legend = legendWrapper.selectAll('.legendSquare')  	
-			  .data(color.range())                              
-			  .enter().append('g')   
-			  .attr('class', 'legendSquare') 
+
+	//Create container per rect/text pair
+	var legend = legendWrapper.selectAll('.legendSquare')
+			  .data(color.range())
+			  .enter().append('g')
+			  .attr('class', 'legendSquare')
 			  .attr("transform", function(d,i) { return "translate(" + 0 + "," + (i * rowHeight) + ")"; })
 			  .style("cursor", "pointer")
 			  .on("mouseover", selectLegend(0.02))
@@ -224,68 +224,68 @@ if (!mobileScreen) {
               .on("click", clickLegend);
 
 	//Non visible white rectangle behind square and text for better hover
-	legend.append('rect')                                     
-		  .attr('width', maxWidth) 
-		  .attr('height', rowHeight) 			  		  
-		  .style('fill', "white");
+	legend.append('rect')
+		  .attr('width', maxWidth)
+		  .attr('height', rowHeight)
+		  .style('fill', "oldlace");
 	//Append small squares to Legend
-	legend.append('rect')                                     
-		  .attr('width', rectSize) 
-		  .attr('height', rectSize) 
-		  .attr('transform', 'translate(' + '22,0' + ')')			  		  
-		  .style('fill', function(d) {return d;});   
-	legend.append('rect')                                     
-		  .attr('width', rectSize) 
-		  .attr('height', rectSize) 			  		  
+	legend.append('rect')
+		  .attr('width', rectSize)
+		  .attr('height', rectSize)
+		  .attr('transform', 'translate(' + '22,0' + ')')
+		  .style('fill', function(d) {return d;});
+	legend.append('rect')
+		  .attr('width', rectSize)
+		  .attr('height', rectSize)
 		  .style('fill', function(d) {return d;})
-		  .style('opacity', opacityCirclesN);                             
+		  .style('opacity', opacityCirclesN);
 	//Append text to Legend
-	legend.append('text')                                     
+	legend.append('text')
 		  .attr('transform', 'translate(' + 44 + ',' + (rectSize/2) + ')')
 		  .attr("class", "legendText")
 		  .style("font-size", "10px")
-		  .attr("dy", ".35em")		  
-		  .text(function(d,i) { return color.domain()[i]; });  
+		  .attr("dy", ".35em")
+		  .text(function(d,i) { return color.domain()[i]; });
 
 
-	
+
 	//Create g element for bubble size legend
 	legendWrapper.append("g")
 						.attr("transform", "translate(" + "0," + (color.domain().length*rowHeight) +")")
-						.append('text')                                     
+						.append('text')
 		  .attr('transform', 'translate(' + (rectSize/2)+',' + (rectSize/2) + ')')
 		  .attr("class", "legendTitle")
 		  .style("font-size", "18px")
-		  .attr("dy", ".35em")		  
-		  .text("-"); 
+		  .attr("dy", ".35em")
+		  .text("-");
 		  legendWrapper.append("g")
 		  .attr("transform", "translate(" + "0," + (color.domain().length*rowHeight) +")")
-		  .append('text')                                     
+		  .append('text')
 .attr('transform', 'translate(' + (22+rectSize/2) +',' + (rectSize/2) + ')')
 .attr("class", "legendTitle")
 .style("font-size", "18px")
-.attr("dy", ".35em")		  
-.text("+"); 
+.attr("dy", ".35em")
+.text("+");
 
 		  legendWrapper.append("g")
 		  .attr("transform", "translate(" + "44," + (color.domain().length*rowHeight) +")")
-		  .append('text')                                     
+		  .append('text')
 		.attr('transform', 'translate(' +'0,' + (rectSize/2) + ')')
 .attr("class", "legendText")
 .style("font-size", "10px")
-.attr("dy", ".35em")		  
-.text("Gram Staining"); 
-		  
+.attr("dy", ".35em")
+.text("Gram Staining");
+
 
 	//Create g element for bubble size legend
 	var bubbleSizeLegend = legendWrapper.append("g")
 						.attr("transform", "translate(" + (legendWidth/2 - 30) + "," + (color.domain().length*rowHeight + 30) +")");
 	//Draw the bubble size legend
-	bubbleLegend(bubbleSizeLegend, rScale, legendSizes = [-3,0,3], legendName = "MIC");	
-	
-	
+	bubbleLegend(bubbleSizeLegend, rScale, legendSizes = [-3,0,3], legendName = "MIC");
 
-		
+
+
+
 }//if !mobileScreen
 else {
 	d3.select("#legend").style("display","none");
@@ -305,7 +305,7 @@ var legendSize1 = sizes[0],
     legendLineLength = 25,
     textPadding = 5,
 	numFormat = d3.format(",");
-	
+
 
 
 wrapperVar.append("text")
@@ -315,7 +315,7 @@ wrapperVar.append("text")
     .attr("y", 0 + "px")
     .attr("dy", "1em")
     .text(titleName);
-    
+
 wrapperVar.append("circle")
     .attr('r', scale(legendSize1))
     .attr('class',"legendCircle")
@@ -331,13 +331,13 @@ wrapperVar.append("circle")
     .attr('class',"legendCircle")
     .attr('cx', legendCenter)
     .attr('cy', (legendBottom-scale(legendSize3)));
-    
+
 wrapperVar.append("line")
     .attr('class',"legendLine")
     .attr('x1', legendCenter)
     .attr('y1', (legendBottom-2*scale(legendSize1)))
     .attr('x2', (legendCenter + legendLineLength))
-    .attr('y2', (legendBottom-2*scale(legendSize1)));	
+    .attr('y2', (legendBottom-2*scale(legendSize1)));
 wrapperVar.append("line")
     .attr('class',"legendLine")
     .attr('x1', legendCenter)
@@ -350,7 +350,7 @@ wrapperVar.append("line")
     .attr('y1', (legendBottom-2*scale(legendSize3)))
     .attr('x2', (legendCenter + legendLineLength))
     .attr('y2', (legendBottom-2*scale(legendSize3)));
-    
+
 wrapperVar.append("text")
     .attr('class',"legendText")
     .attr('x', (legendCenter + legendLineLength + textPadding))
@@ -369,20 +369,20 @@ wrapperVar.append("text")
     .attr('y', (legendBottom-2*scale(legendSize3)))
     .attr('dy', '0.25em')
 	.text("0.001");
-	
 
-    
+
+
 }//bubbleLegend
 
 //////////////////////////////////////////////////////////////////////////
 //////////////////// Hover function for the legend ////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-	
-//Decrease opacity of non selected circles when hovering in the legend	
+
+//Decrease opacity of non selected circles when hovering in the legend
 function selectLegend(opacity) {
 	return function(d, i) {
 		var chosen = color.domain()[i];
-			
+
 		wrapper.selectAll(".mics")
 			.filter(function(d) { return d.Antibiotics != chosen; })
 			.transition()
@@ -396,17 +396,17 @@ function selectLegend(opacity) {
 ///////////////////////////////////////////////////////////////////////////
 //Function to show only the circles for the clicked sector in the legend
 function clickLegend(d,i) {
-	
+
 	event.stopPropagation();
 
 	//deactivate the mouse over and mouse out events
 	d3.selectAll(".legendSquare")
 		.on("mouseover", null)
 		.on("mouseout", null);
-		
+
 	//Chosen legend item
 	var chosen = color.domain()[i];
-			
+
 	//Only show the circles of the chosen sector
 	wrapper.selectAll(".mics")
 		.style("opacity", function(d){
@@ -429,11 +429,11 @@ function clickLegend(d,i) {
 			if(d.Antibiotics != chosen) return null;
 			else return removeTooltip.call(this, d, i);
 		});
-	
-	
+
+
 }//sectorClick
 //Show all the cirkels again when clicked outside legend
-function resetClick() {	
+function resetClick() {
 
 	//Activate the mouse over and mouse out events of the legend
 	d3.selectAll(".legendSquare")
@@ -464,7 +464,7 @@ function resetClick() {
 
 //Reset the click event when the user clicks anywhere but the legend
 d3.select("body").on("click", resetClick);
-	  
+
 ///////////////////////////////////////////////////////////////////////////
 /////////////////// Hover functions of the circles ////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -478,14 +478,14 @@ function removeMIC() {
 		else
 		return opacityCirclesN;
 	});
-    
+
     //Hide tooltip
     $('.popover').each(function() {
         $(this).remove();
-    }); 
-    
+    });
+
     }//function removeTooltip
-    
+
     //Show the tooltip on the hovered over slice
     function showMIC() {
     //Define and show the tooltip
@@ -494,18 +494,18 @@ function removeMIC() {
         container: '#chart',
         trigger: 'manual',
         html : true,
-        content: function() { 
+        content: function() {
             return "<span style='font-size: 11px; text-align: center;'>" +"MIC: minimum inhibitory concentration"+ "</span>"; }
     });
     $(this).popover('show');
-                    
+
     }//function showTooltip
 //Hide the tooltip when the mouse moves away
 function removeTooltip(d) {
 
 	//Save the chosen circle (so not the voronoi)
 	var element = d3.select(this)
-		
+
 	//Fade out the bubble again
 	element.style("opacity", function(d){
 		if (d["Gram Staining"] == "positive")
@@ -513,12 +513,12 @@ function removeTooltip(d) {
 		else
 		return opacityCirclesN;
 	});
-	
+
 	//Hide tooltip
 	$('.popover').each(function() {
 		$(this).remove();
-	}); 
-  
+	});
+
 	//Fade out guide lines, then remove them
 	d3.selectAll(".guide")
 		.transition().duration(200)
@@ -536,7 +536,7 @@ function showTooltip(d) {
 		container: '#chart',
 		trigger: 'manual',
 		html : true,
-		content: function() { 
+		content: function() {
 			if (d["Gram Staining"] == "positive")
 			n = "+";
 			else
@@ -599,7 +599,7 @@ function showTooltip(d) {
 		.text( d.Bacteria )
 		.transition().duration(200)
 		.style("opacity", 0.5);	*/
-    
+
 }//function showTooltip
 
 
