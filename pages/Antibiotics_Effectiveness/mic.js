@@ -8,30 +8,6 @@ var mics = [
     "num": 1
   },
   {
-    "Bacteria": "Brucella abortus",
-    "logMIC": 0,
-    "MIC": 1,
-    "Antibiotics": "Penicilin",
-    "Gram Staining": "negative",
-    "num": 2
-  },
-  {
-    "Bacteria": "Brucella anthracis",
-    "logMIC": -3,
-    "MIC": 0.001,
-    "Antibiotics": "Penicilin",
-    "Gram Staining": "positive",
-    "num": 3
-  },
-  {
-    "Bacteria": "Diplococcus pneumoniae",
-    "logMIC": -2.301029996,
-    "MIC": 0.005,
-    "Antibiotics": "Penicilin",
-    "Gram Staining": "positive",
-    "num": 4
-  },
-  {
     "Bacteria": "Escherichia coli",
     "logMIC": 2,
     "MIC": 100,
@@ -72,6 +48,14 @@ var mics = [
     "num": 9
   },
   {
+    "Bacteria": "Salmonella schottmuelleri",
+    "logMIC": 1,
+    "MIC": 10,
+    "Antibiotics": "Penicilin",
+    "Gram Staining": "negative",
+    "num": 11
+  },
+  {
     "Bacteria": "Salmonella (Eberthella) typhosa",
     "logMIC": 0,
     "MIC": 1,
@@ -80,12 +64,12 @@ var mics = [
     "num": 10
   },
   {
-    "Bacteria": "Salmonella schottmuelleri",
-    "logMIC": 1,
-    "MIC": 10,
+    "Bacteria": "Brucella abortus",
+    "logMIC": 0,
+    "MIC": 1,
     "Antibiotics": "Penicilin",
     "Gram Staining": "negative",
-    "num": 11
+    "num": 2
   },
   {
     "Bacteria": "Staphylococcus albus",
@@ -110,6 +94,22 @@ var mics = [
     "Antibiotics": "Penicilin",
     "Gram Staining": "positive",
     "num": 14
+  },
+  {
+    "Bacteria": "Brucella anthracis",
+    "logMIC": -3,
+    "MIC": 0.001,
+    "Antibiotics": "Penicilin",
+    "Gram Staining": "positive",
+    "num": 3
+  },
+  {
+    "Bacteria": "Diplococcus pneumoniae",
+    "logMIC": -2.301029996,
+    "MIC": 0.005,
+    "Antibiotics": "Penicilin",
+    "Gram Staining": "positive",
+    "num": 4
   },
   {
     "Bacteria": "Streptococcus hemolyticus",

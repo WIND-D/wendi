@@ -167,7 +167,7 @@ wrapper.append("g")
 	.attr("class", "x title2")
 	.attr("text-anchor", "end")
 	.style("font-size", (mobileScreen ? 8 : 12) + "px")
-	.attr("transform", "translate(" + (width) + "," + (height/2-50) + ")")
+	.attr("transform", "translate(" + (width) + "," + (height/2) + ")")
     .text("More effective -->");
 
     wrapper.append("g")
@@ -175,7 +175,7 @@ wrapper.append("g")
 	.attr("class", "x title2")
 	.attr("text-anchor", "begin")
 	.style("font-size", (mobileScreen ? 8 : 12) + "px")
-	.attr("transform", "translate("+ "15," + (height/2-50) + ")")
+	.attr("transform", "translate("+ "15," + (height/2) + ")")
     .text("<-- Less effective");
 //Set up y axis label
 wrapper.append("g")
