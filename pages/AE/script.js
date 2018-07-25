@@ -227,7 +227,7 @@ if (!mobileScreen) {
 	legend.append('rect')
 		  .attr('width', maxWidth)
 		  .attr('height', rowHeight)
-		  .style('fill', "oldlace");
+		  .style('fill', "white");
 	//Append small squares to Legend
 	legend.append('rect')
 		  .attr('width', rectSize)
