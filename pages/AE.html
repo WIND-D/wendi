@@ -154,9 +154,7 @@
       <nav class="nav">
           <ul>
               <li><a href="../index.html#portfolio" id="nav-p">Projects</a></li>
-              <li><a href="" id="nav-p">Blog</a></li>
               <li><a href="" id="nav-p">Gallery</a></li>
-              <li><a href="../index.html#about" id="nav-a">About</a></li>
               <li><a href="../WendiDing_Resume.pdf" target="_blank">Resume</a></li>
           </ul>
       </nav>
@@ -208,7 +206,7 @@
 
   <section class="page clearfix">
       <div class="clearfix" style="border-bottom:1px solid rgba(0,0,0,0.2);">
-          <div class="col-md-6" >
+          <div class="col-md-6 col-sm-6" >
               <p>
                 <b class="black ">Project Type:&nbsp;&nbsp;</b><b class="light">Data Visulization</b>
               </p>
@@ -216,7 +214,7 @@
                 <b class="black ">Roles:&nbsp;&nbsp;</b><b class="light">Designer & Programmer</b>
               </p>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 col-sm-6">
               <p>
                 <b class="black ">Team:&nbsp;&nbsp;</b><b class="light">Individual work</b>
               </p>
@@ -237,14 +235,14 @@
           </section>
           <section class="clearfix image">
           <div class="annotation">
-                <div class="textContainer">
+                <div class="textContainer col-sm-3 col-md-3">
                     <span>
-                        <p><i style="font-weight:200; font-size:15px;">Burtin's Data on Antibiotics Experiment (1951)
+                        <p><i style="font-weight:200; font-size:15px;">Fig.1 Antibiotics Experiment (1951) Data
                    </i></p>
                         </span>
                   </div>
-                  <div class="imgContainer">
-                  <img src="../p_image/bData.png" alt="Burtin's Data(1951)"/>
+                  <div class="imgContainer col-sm-9 col-md-9">
+                  <img src="../p_image/AE/bData.png" alt="Burtin's Data(1951)" />
                   </div>
             </div>
             </section>
@@ -252,7 +250,13 @@
             <section class="page clearfix" style="padding-top: 0vh">
                     <div class="clearfix">
                   <p>
-                </p>        
+                        The experiment’s results answered below questions:<br>
+                        Q1:  Which antibiotic is the most effective one on every bacteria?<br>
+                        Q2: For gram-positive, gram-negative bacteria <i>(Bacterial spices are classified into two groups according to <a href="https://en.wikipedia.org/wiki/Gram_stain">Gram Staining</a> technique)</i>, which antibiotic prevents growth of the bacteria group more effectively?<br>
+
+<br>By comparing different MIC value in a row or a column of the raw data (<i>Fig.1</i>),  we can easily pick out the answer of Q1, which has the least MIC of the compared set. But for Q2, it’s hard to tell the answer by just scanning all the MIC and gram staining result. To better figure out insights of the experiment’s raw data, data visualization “Effectiveness of Antibiotics” at the top of this page is designed.
+                
+                    </p>        
           
 
 

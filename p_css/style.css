@@ -29,7 +29,7 @@ section.page{
   padding: 0px 30%;
 }
 section.image{
-  padding: 0px 10%;
+  padding: 0px 5%;
 }
 
 
@@ -393,21 +393,22 @@ h1.projectTitle {
   vertical-align: baseline;
   font:inherit;
 }
+
 .textContainer{
+  display:inline-block;
   text-align:right;
   vertical-align: baseline;
-  width:30%;
-  padding:0px 10%;
-
+  padding-right:10%;
 }
 .imgContainer{
-  width:50%;
+  display:inline-block;
   vertical-align: baseline;
-  margin-left:-5%;
+  margin-left:-12%;
 }
 .imgContainer img{
-  align:left;
-  width:100%;  
+  display:block;
+  margin:auto;
+  width:60%;  
 }
 
 .label{
@@ -1222,6 +1223,9 @@ section.page img{
   .cover{
     padding:5% 3%;
   }
+  section.page{
+    padding: 0px 12%;
+  }
   section.page p{
     font-size: 14px;
 
@@ -1435,4 +1439,6 @@ section.page img{
   .col-lg-1 {
     width: 8.33333333%;
   }
+
+
 }
