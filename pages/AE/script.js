@@ -3,7 +3,7 @@
 ////////////////////////////////////////////////////////////
 
 //Quick fix for resizing some things for mobile-ish viewers
-var mobileScreen = ($( window ).innerWidth() < 500 ? true : false);
+var mobileScreen = ($(window ).innerWidth() < 500 ? true : false);
 
 //Scatterplot
 var margin = {left: 150, top: 20, right: 20, bottom: 20},
