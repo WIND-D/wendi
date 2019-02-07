@@ -215,12 +215,12 @@ header.non-fixed{
 }
 header.nav-down a{
   text-decoration: none;
-  color: grey;
+  color: black;
   text-transform: uppercase;
 }
 header.non-fixed a{
   text-decoration: none;
-  color: grey;
+  color: black;
   text-transform: uppercase;
 }
 header a:hover{
