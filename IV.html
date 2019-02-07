@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="utf-8">
+    <title>Wendi Ding</title>
+    <script src="https://use.fontawesome.com/f3a7dfaa36.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Open+Sans:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+    <link rel="stylesheet" href="p_css/style.css" media="screen" title="no title">
+
+    <script src='p_js/js.js'></script>
+    <style media="screen">
+        #icons a i:hover{
+          color: rgb(218,72,39);
+          transition: all .5s ease;
+          -webkit-transition: all .5s ease;
+          -moz-transition: all .5s ease;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#filters li span').click(function() {
+                // fetch the class of the clicked item
+                var ourClass = $(this).attr('class');
+                // reset the active class on all the buttons
+                $('#filters li').removeClass('active');
+                // update the active state on our clicked button
+                $(this).parent().addClass('active');
+                if (ourClass == 'all') {
+                    // show all our items
+                    $('#coverlist').children('div.cover').fadeIn("slow");
+                } else {
+                    var listnum = $('#coverlist').children().length;
+                    // // hide all elements that don't share ourClass
+                    $('#coverlist').children().fadeOut("fast", function() {
+                        listnum = listnum - 1;
+                        if (listnum == 0) {
+                            $('#coverlist').children('div.' + ourClass).fadeIn("fast");
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+    </script>
+    <link rel="shortcut icon" href="p_image/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-116032617-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+        <header class='non-fixed' id='top'>
+                <a href="index.html">
+                    <img class='logo_img' id="logo_img" src="p_image/logo.png" alt="logo of Wendi Ding" style=""/>
+                </a>
+                <nav class="nav nav_bread">
+                    <a href="#"><img class="bread_img" onclick="show_nav()" src="../p_image/bread.png" alt="nav bread icon" /></a>
+                </nav>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="index.html#portfolio" id="nav-p">Work</a></li>
+                        <li><a href="" id="nav-p">About</a></li>
+                        <li><a href="WendiDing_Resume.pdf" target="_blank">Resume</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="full" id='full' onclick='show_page()'>
+                <ul>
+                    <li><a href="index.html#portfolio">Work</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="WendiDing_Resume.pdf" target="_blank">Resume</a></li>
+                </ul>
+            </div>
+    
+    <div>
+                    <section class="title clearfix" style="height:30vh;color:rgba(0,0,0,0.8);">
+                            <h1 style="font-family: 'Major Mono Display';">iNfo Visualization</h1>
+                            <p></p>                        
+                    </section>
+                    <section class="page clearfix" style="height:20vh;">
+                        <div class="clearfix">
+                            <div class="col-lg-4">
+                              <div class="box">
+                                <h4>Timeframe</h4>
+                                <h5>Jan.2018 - Present</h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="box">
+                                  <h4>team</h4>
+                                  <h5>Individual work</h5>
+                                  </div>
+                              </div>
+                            
+                              <div class="col-lg-4">
+                                  <div class="box">
+                                    <h4>tools</h4>
+                                    <h5>Adobe Illustrator</h5>
+                                    <h5>Javascript D3</h5>
+                                    <h5>Jquery</h5>
+                                    </div>
+                                </div>
+                        </div>
+                    </section>
+
+            <div class="clearfix" id='coverlist' style="padding:0 12%; margin:0 auto;">
+
+            <div class="col-lg-6 col-md-6 cover code">
+                <a href="https://wendelena.github.io/SI649_gProject/index.html">
+                    <img src="p_image/bsi.png" class="img-responsive" alt="" />
+                    <p class='cover_des'>
+                        <b>BSI Learning Goals</b><br><br>Find personalized learning path
+                    </p>
+                </a>
+            </div>
+
+            
+
+            <div class="col-lg-6 col-md-6 cover research">
+                <a href="pages/vote.html">
+                    <img src="p_image/vote.png" class="img-responsive" alt="" />
+                    <p class='cover_des'>
+                        <b>Live Presidential Forecast</b><br><br>Correct DCE with Galton Board
+                    </p>
+                </a>
+            </div>
+
+            
+
+        <div class="col-lg-6 col-md-6 cover code">
+            <a href="pages/Experiment.html">
+                <img src="p_image/D.png" class="img-responsive" alt="" />
+                <p class='cover_des'>
+                    <b>Code art</b><br><br>"D"
+                </p>
+            </a>
+        </div>
+
+            <div class="col-lg-6 col-md-6 cover code">
+                <a href="pages/AE.html">
+                    <img src="p_image/Antibiotics.png" class="img-responsive" alt="" />
+                    <p class='cover_des'>
+                        <b>Will Burton's Data (1951)</b><br><br>Effectiveness of Antibiotics 
+                    </p>
+                </a>
+            </div>
+           
+  
+                
+    </div>
+    <section id="about"></section>
+
+    <!-- <div class="" style="height:250px; margin:65px 0 0 0;">
+        <div style="height:100px;">
+            <p class='button'>
+                <a href="Chong-Li-Resume.pdf" target="_blank">VIEW RESUME</a>
+            </p>
+        </div>
+    </div>
+    <div>
+        <section style="height:50px;width:100%;" id="about">
+        </section>
+        <h1 style="text-align:center;font-size:40px; font-weight:400; opacity:0.75; font-family:'Monoton'; line-height:100%;">
+            About
+        </h1>
+        <section class="about_des clearfix">
+            <div class="clearfix">
+                <p class="me" style="text-align:center; margin-bottom:40px; margin-top:-10px;"><img src="p_image/me.png" alt="picture of Chong" /></p>
+                <p style="text-align:center; line-height:190%;">
+                  Full-stack product designer📍the Bay Area<br>
+                  6+ years experience in user-centered design approach👨🏻‍🎓<br>
+                  2+ years experience in front-end dev👨🏻‍💻 and creative programming<br>
+                  Amateur photographer with iPhone📱 and DJI Mavic Pro✈<br>
+                  Learner and enthusiast in Artificial Intelligence🤔<br>
+                </p>
+            </div>
+
+        </section>
+    </div>
+    -->
+
+
+
+    <footer style="height:80px; margin-bottom:0px; bottom:0; padding:0 8%;border-top: 1px solid #eee;" id = "footer">
+            <h1 style="margin:20px; font-size:24px; text-align: center" id="icons">
+                    <a href="https://www.linkedin.com/in/wendi-ding-549161132/" target="_blank" style="margin:0 15px; color:rgba(0,0,0,0.7)">
+                      <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/Wendelena" target="_blank" style="margin:0 15px; color:rgba(0,0,0,0.7)">
+                        <i class="fa fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.flickr.com/people/140529687@N04/" target="_blank" style="margin:0 15px; color:rgba(0,0,0,0.7)">
+                        <i class="fa fa-flickr" aria-hidden="true"></i>
+                    </a>
+                  </h1>
+        <p style="text-align:center; font-size:14px; line-height:80px;margin:0;">
+            Design and Code by Wendi Ding &copy; 2019
+        </p>
+    </footer>
+
+    
+</body>
+
+</html>
