@@ -13,6 +13,16 @@ header{
   padding: 0px 14%;
   /*margin: 0 auto;*/
 }
+
+
+
+#title h2 {
+  width: 98vw;
+  text-align: center;
+  position: absolute;
+  z-index: -1;
+  bottom: -5vh;
+}
 /*
 {
   margin:0px  2%;
@@ -120,9 +130,17 @@ h6::selection{
   color:white;
   background: rgb(223,64,76);
 }
+.red{
+  color: rgb(223,64,76);
+}
 h1{
   font-family: "Open Sans", sans-serif;
   font-size: 48px;
+  display: block;
+  margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
   /*color: rgba(0,0,0,0.8);*/
   /*text-align: center;*/
 }
@@ -206,7 +224,7 @@ header.non-fixed a{
   text-transform: uppercase;
 }
 header a:hover{
-  color:black;
+  color:rgb(223,64,76);
 }
 .logo_img{
   float: left;
@@ -854,6 +872,24 @@ footer{
   line-height: 25px;
 }
 
+.box {
+  border-left: #eee 4px solid;
+  padding: 10px;
+  min-height: 90px;
+}
+.box h4 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #43434A;
+  font-size: 13px;
+  margin: 0 0 8px;
+}
+.box p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+}
+
 /* slide show*/
 .content{
   max-width:1300px;
@@ -1035,7 +1071,7 @@ p.button.white a:hover{
 }
 #title{
  background: none;
- height:520px;
+ height:100vh;
  margin-top:-10px;
  margin-bottom:0;
 }
@@ -1043,10 +1079,13 @@ p.button.white a:hover{
   color:black;
   font-family:'open Sans', sans-serif;
   text-align:left;
-  font-size:28px;
+  font-size:4vw;
   line-height:150%;
   font-weight: 300;
+  margin-top: -7vh;
 }
+
+
 #toportfolio{
 
 

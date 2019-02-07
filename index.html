@@ -10,6 +10,7 @@
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Open+Sans:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
     <link rel="stylesheet" href="p_css/style.css" media="screen" title="no title">
 
     <script src='p_js/js.js'></script>
@@ -69,7 +70,7 @@
 </head>
 
 <body>
-    <header class='nav-down' id='top' style="padding: 0px 14%;">
+    <header class='nav-down' id='top' style="padding: 0px 14%;visibility: hidden;">
         <a href="index.html">
             <img class='logo_img' id="logo_img" src="p_image/logo.png" alt="logo of Wendi Ding" style=""/>
         </a>
@@ -78,9 +79,9 @@
         </nav>
         <nav class="nav">
             <ul>
-                <li><a href="index.html#portfolio" id="nav-p">Projects</a></li>
+                <li><a href="index.html#portfolio" id="nav-p">Portfolio</a></li>
                 <!--<li><a href="" id="nav-p">Blog</a></li>-->
-                <li><a href="" id="nav-p">Gallery</a></li>
+                <li><a href="" id="nav-p">Playground</a></li>
                 <!--<li><a href="index.html#about" id="nav-a">About</a></li>-->
                 <li><a href="WendiDing_Resume.pdf" target="_blank">Resume</a></li>
             </ul>
@@ -88,8 +89,8 @@
     </header>
     <div class="full" id='full' onclick='show_page()'>
         <ul>
-            <li><a href="index.html#portfolio">Projects</a></li>
-            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#about">Playground</a></li>
             <li><a href="WendiDing_Resume.pdf" target="_blank">Resume</a></li>
         </ul>
     </div>
@@ -99,14 +100,18 @@
 
     <div class="blue" id="title" >
         <div style="padding:0 14%;">
-          <h1 style="text-align:center;font-size:40px; font-weight:400; opacity:0.75; font-family:'Fredericka the Great'; line-height:180%;">
-            Hi, I am Wendi Ding.
+          <h1 style="text-align:center;font-size:4vw; font-weight:400; opacity:1; font-family:'Major Mono Display', monospace; line-height:180%;">
+                hi I am Wendi dinG
           </h1>
-          <h1 style="text-align:center;">
+          <!--<h1 style="text-align:center;">
             love <b style="color:rgb(223,64,76);font-weight:400;">Technology, Music, Design, Art</b><br> exploring innovations in between 
-          </h1>
+          </h1>-->
         </div>
+
         <!-- <a id='toportfolio' href="#portfolio"><i class="fa fa-angle-down" aria-hidden="true"></i></a> -->
+        <h2 id="scroll">
+                <img src="p_image/scroll.gif" style="width:25vw;"alt="">
+              </h2>
     </div>
 
     <div>
@@ -122,7 +127,7 @@
         
         <div class="clearfix" id='coverlist' style="padding:0 12%; margin:0 auto;">
 
-            <div class="col-lg-4 col-md-6 cover research design">
+            <div class="col-lg-4 col-md-6 cover research">
                 <a href="pages/Maestro.html">
                     <img src="p_image/maestro.png" class="img-responsive" alt="" />
                     <p class='cover_des'>
@@ -131,7 +136,7 @@
                 </a>
             </div>
 
-            <div class="col-lg-4 col-md-6 cover design research">
+            <div class="col-lg-4 col-md-6 cover research">
                 <a href="pages/VR.html">
                     <img src="p_image/ARC.png" class="img-responsive" alt="" />
                     <p class='cover_des'>
@@ -140,7 +145,7 @@
                 </a>
             </div>
 
-            <div class="col-lg-4 col-md-6 cover code design">
+            <div class="col-lg-4 col-md-6 cover code">
                 <a href="https://wendelena.github.io/SI649_gProject/index.html">
                     <img src="p_image/bsi.png" class="img-responsive" alt="" />
                     <p class='cover_des'>
@@ -149,7 +154,7 @@
                 </a>
             </div>
 
-            <div class="col-lg-4 col-md-6 cover research design code">
+            <div class="col-lg-4 col-md-6 cover research">
                 <a href="pages/vote.html">
                     <img src="p_image/vote.png" class="img-responsive" alt="" />
                     <p class='cover_des'>
@@ -158,7 +163,7 @@
                 </a>
             </div>
 
-            <div class="col-lg-4 col-md-6 cover research design">
+            <div class="col-lg-4 col-md-6 cover research">
                 <a href="pages/wbur.html">
                     <img src="p_image/wbur.png" class="img-responsive" alt="" />
                     <p class='cover_des'>
@@ -244,7 +249,7 @@
            
 
             
-            <div class="col-lg-4 col-md-6 cover design">
+            <div class="col-lg-4 col-md-6 cover research">
                     <a href="pages/MSRA.pdf">
                         <img src="p_image/MSRA.png" class="img-responsive" alt="" />
                         <p class='cover_des'>
@@ -267,6 +272,7 @@
 
         </div>
     </div>
+    <section id="about"></section>
 
     <!-- <div class="" style="height:250px; margin:65px 0 0 0;">
         <div style="height:100px;">
@@ -318,19 +324,30 @@
 
     <script type="text/javascript">
         var t = $('#portfolio').offset().top - 200;
-        var t1 = $('#footer').offset().top - 100;
+        var t1 = $('#about').offset().top - 100;
         $(document).scroll(function() {
-            if ($(this).scrollTop() < t-300) {
+            if ($(this).scrollTop() < 50) {
+              $('#scroll').css({
+                  "visibility": "visible"
+              });
+            } else {
+              $('#scroll').css({
+                  "visibility": "hidden"
+              });
+            }
+            if ($(this).scrollTop() < 50) {
                 $('#top').css({
                     "background-color": "rgba(0,0,0,0)",
                     "border-bottom": "0px solid #eee",
-                    "color": "white"
+                    "color": "white",
+                    "visibility": "hidden"
                 });
             } else {
                 $('#top').css({
                     "background-color": "white",
                     "border-bottom": "1px solid #eee",
-                    "color": "grey"
+                    "color": "grey",
+                    "visibility": "visible"
                 });
             }
             if ($(this).scrollTop() < t) {
@@ -360,7 +377,7 @@
             }
             if ($(this).scrollTop() > t1) {
                 $('#nav-a').css({
-                    "color": "rgb(223,64,76)",
+                    "color": "rgb(52,183,143)",
                     "font-weight": "400"
                 });
             } else if ($(this).scrollTop() < t) {
