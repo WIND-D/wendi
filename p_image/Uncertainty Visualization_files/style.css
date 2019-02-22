@@ -380,22 +380,22 @@ section.page{
 }
 section.page h1{
   font-family: "open Sans",cursive;
-  font-weight: 450;
+  font-weight: 400;
   font-size: 28px;
   line-height: 180%;
   padding-top:1vh;
 }
 section.page h2{
   font-family: "open Sans",cursive;
-  font-weight: 400;
-  font-size: 28px;
+  font-weight: 300;
+  font-size: 22px;
   margin-top: 20px;
   /*text-align: center;*/
 }
 section.page h3{
   font-family: "open Sans",cursive;
-  font-weight: bold;
-  font-size: 16px;
+  font-weight: 300;
+  font-size: 22px;
 }
 section.page p,
 section.page li{
