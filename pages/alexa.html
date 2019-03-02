@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="utf-8">
+    <title>Internship @ WBUR</title>
+    <link rel="shortcut icon" href="../p_image/logo.png">
+    <script src="https://use.fontawesome.com/f3a7dfaa36.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Open+Sans:300,400" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">  
+   
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet"> 
+    <script src='../p_js/jquery-3.1.1.min.js'></script>
+    <script src='../p_js/js.js'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../p_css/css/lightbox.min.css">
+    <link rel="stylesheet" href="../p_css/style.css" media="screen" title="no title">
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-116032617-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+<header class='non-fixed' id='top'>
+    <a href="../index.html">
+        <img class='logo_img' src="../p_image/logo.png" alt="logo of Chong Li" />
+    </a>
+    <nav class="nav nav_bread">
+        <a href="#"><img class="bread_img" onclick="show_nav()" src="../p_image/bread.png" alt="nav bread icon" /></a>
+    </nav>
+    <nav class="nav">
+        <ul>
+            <li><a href="../index.html#portfolio" id="nav-p">Work</a></li>
+            <!--<li><a href="" id="nav-p">Blog</a></li>-->
+            <li><a href="" id="nav-p">About</a></li>
+            <!--<li><a href="index.html#about" id="nav-a">About</a></li>-->
+            <li><a href="../WendiDing_Resume.pdf" target="_blank">Resume</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="full" id='full' onclick='show_page()'>
+    <ul>
+        <li><a href="../index.html#portfolio">Work</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../WendiDing_Resume.pdf" target="_blank">Resume</a></li>
+    </ul>
+</div>
+
+<section class="title clearfix" style="height:80vh;color:white;">
+    <h1>alexa design competition @ amazon</h1>
+    <p>Connect with friends while driving for long hours</p>
+    <img src="../p_image/dwfc.jpg" alt="lighting design title"/>
+    
+</section>
+<section class="page clearfix" style="height:vh;">
+        <div class="col-lg-3">
+          <div class="box">
+            <h4>Timeframe</h4>
+            <h5>36 hours</h5>
+            <h5>Feb.2019</h5>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="box">
+              <h4>team</h4>
+              <h5>2 UX Designers</h5>
+              <h5>UX Researcher (me)</h5>
+              <h5>Facebook API Developer (me)</h5>
+              <h5>Alexa Skill Developer</h5>
+              </div>
+          </div>
+        
+          <div class="col-lg-6">
+              <div class="box">
+                <h4>my contribution</h4>
+                <h5>- Analyzed 3,600 surveys, 6-month wbur.org's web traffic</h5>
+                <h5>- Organized a focus group event</h5>
+                <h5>- Summarized the user donation journey</h5>
+                <h5>- Created the WBUR user profile containing 3 personas</h5>
+                <h5>- Performed an A/B test</h5>
+                <h5>- Designed, coded and launched an online experiment</h5>
+                <h5>- Gave a 45-minute speech to WBUR on the topic of <a href="https://prezi.com/view/Rp0j6K9oBHqyuSEkFA90/"><i><b>What do we know from the persona experiment?</b></i></a></h5>
+                <h5>- Publishe 4 blogs on <a href="http://publicradiobizlab.org/author/wendi/">Public Radio Business Laboratory</a> </h5>
+                </div>
+            </div>
+    
+</section>
+
+
+
+<section class="page clearfix grey" >
+  <h1>INTRODUCTION</h1>
+  <p class="text">
+      During Summer 2018, I interned as a UX Researcher (a team of four) at the <a href="http://publicradiobizlab.org/author/wendi/">Public Radio Business Laboratory</a> of <a href="https://www.wbur.org">WBUR - Boston's NPR News Station</a>, utilizing both qualitative and quantitative research methods to explore the future business model for public radio stations. The projects I worked on included
+      <!--
+      Whether it’s an interview on-air, a news story that caught someone’s eye on our website, an episode of a podcast with critical thinking, or a post on social media, public radio is no longer just a voice people listen to during drive time on the car radio. Every touch WBUR has with our audience contributes to our audience’s experience, and impacts how they relate to our station.
+
+      Through <a href="http://publicradiobizlab.org/wp-content/uploads/2018/08/WBUR-Lets-Talk-Survey-Opportunity-Report.pdf">previous BizLab research</a>, we know that our listeners discover us through multiple scenarios and have kept listening to us for different reasons. Some people formed the habit of listening to WBUR when they were a child in the backseats of cars when their parents tuned into WBUR (or another local NPR station) during family drives. Other people started listening to WBUR while taking a college course, as part of a course assignment. Others found WBUR through a colleague’s or friend’s recommendation. In some cases, people moved to Boston and transferred their listening from another city’s NPR station to WBUR. And others did not have an affinity for public radio at all, but were seeking quality journalism and captivating programs, and found WBUR by surfing the radio dial or browsing podcast recommendations, and became a loyal listener because of the quality content WBUR produces.
+      
+      Our survey and metrics show that our audience is consuming our content on multiple platforms. Between our live stream, podcasts, and on-demand programs, people who used to listen by physical radios are migrating to digital platforms, leveraging the meaning of “experience” for public radio: people interact with our station across platforms and medium.
+      
+      Behind all of these many paths that lead people to WBUR, and the many forms of engagement with WBUR, we want to know if there are fundamentally different motivations amongst our listeners in why they listen, and donate, to WBUR. Does WBUR meet people’s needs in different ways? What makes them loyal to WBUR and consider themselves as a part of WBUR community? And given all this, what is the most effective way to drive them towards an altruism moment, where they donate to WBUR?
+  <br><i>Read more in the published blog <a href="http://publicradiobizlab.org/2018/08/the-persona-experiment-it-is-no-longer-just-a-radio-experience/">"It is no logner just a radio experience"</a></i>-->
+    </p>
+    <ul><li>Major project
+      <ul>
+        <li><b>Ethnographic research</b>
+        <li><b>A/B test of pitch for potential donors</b>
+        <li><b>Audiences' donating journey study</b>
+        <li><b>Engagement experiment design</b> 
+        <li><b>Express findings through presentations and blogs</b> 
+
+
+      </ul>
+    </ul>
+    <ul><li>Projects I supported
+        <ul>
+          <li><b><i><a href="http://cynthiayue.cc/bookshelf.html">WBUR Bookshelf </a></i></b> remote usability test
+          <li><b>WBUR summer pop-up online store
+        </ul>
+      </ul>
+    <!--
+  <div class="">
+    <img src="image/airc/smog1.jpg" alt="" style="width:48%; margin-right:3%;"/>
+    <img src="image/airc/smog2.png" alt="" style="width:48%;"/>
+    <p class="center">
+      <i>Children in China Do NOT Get the Right Protection in Smog</i>
+    </p>
+  </div>-->
+</section>
+
+<section class="page clearfix"  >
+  <h2>Ethnographic Research</h2>
+  <p class="text">
+      There are 500,000 unique individuals listening to WBUR each week. How do we communicate effectively with each of them about why they listen to WBUR, what makes them loyal to the program, and what drives them to donate? Our answer is to use personas. A user persona is a fictional, yet realistic, description of a person who uses your product. In this case, someone who consumes WBUR’s content. By creating a set of representative personas, we are able to reduce our audience down to a <a href="https://uxplanet.org/ux-personas-vs-marketing-personas-whats-the-difference-adc77f630332">“manageable and memorable set of characters,”</a> and then design unique messages for each character in order to explore how to reach all our audience members.
+      <br><i>Read more in the published blog <a href="http://publicradiobizlab.org/2018/08/wbur-personas/">"Creating WBUR Personas"</a></i>
+
+    </p>
+    <div class="clearfix">
+        <h3 style="margin-top:20px;">OBJECTIVE</h2>
+        <h3 style="margin-top:20px;">PROCESS</h2>
+          <img src="../p_image/personap.jpg" alt="process for Ethnographic research" />
+
+      <h3 style="margin-top:20px;">INSIGHTS</h2>
+      <p>
+      </p>
+      <div class="">
+        <img src="wbur/ALp.png" alt="" style="box-shadow:0px 0px 3px #888888;"/>
+        <p class="center">
+          <i>The Aspirational Learner</i>
+        </p>
+      </div>
+      <div class="">
+        <img src="wbur/WCp.png" alt="" style="box-shadow:0px 0px 3px #888888;"/>
+        <p class="center">
+          <i>The World Citizen</i>
+        </p>
+      </div>
+      <div class="">
+        <img src="wbur/LLp.png" alt="" style="box-shadow:0px 0px 3px #888888;"/>
+        <p class="center">
+          <i> The Lifelong Listener</i>
+        </p>
+      </div>
+     
+    </div>
+</section>
+
+<section class="page clearfix grey"  >
+    <h2 style="padding-top:20px;">Audiences' Donating Journey</h2>
+    <p class="text">
+       
+      </p>
+      <div class="clearfix">
+          <h3 style="margin-top:20px;">OBJECTIVE</h2>
+          <h3 style="margin-top:20px;">PROCESS</h2>
+            <img src="../p_image/personaP.svg" alt="process for Ethnographic research" />
+  
+        <h3 style="margin-top:20px;">INSIGHTS</h2>
+        <p>
+        </p>
+      
+       
+      </div>
+  </section>
+  <section class="page clearfix"  >
+      <h2 style="margin-top:20px;">A/B Test</h2>
+      <p class="text">
+         
+        </p>
+        <div class="clearfix">
+            <h3 style="margin-top:20px;">OBJECTIVE</h2>
+            <h3 style="margin-top:20px;">PROCESS</h2>
+              <img src="../p_image/personaP.svg" alt="process for Ethnographic research" />
+    
+          <h3 style="margin-top:20px;">INSIGHTS</h2>
+          <p>
+          </p>
+        
+         
+        </div>
+    </section>
+
+
+<section class="page clearfix grey" >
+    <h2 style="padding-top:20px;">Engagement experiment</h2>
+    <p>
+        With three personas in hand, we designed an experiment to test the effectiveness of communicating to WBUR’s audience by persona. We wanted to determine two things with an experiment: know if the personas reflect unique populations in our listener audience and understand, if we communicated to users in the language and perspective of their persona, that they will engage more with us. As a reminder, the three personas are the Aspirational Learner, the World Citizen, and the Lifelong Listener which represent why someone listens to WBUR: either to get smarter, to track the news, or to feel an emotional connection.
+
+        The structure of the experiment was to find users loyal to WBUR via Facebook Ads, ask them a question to have them self-select their persona, and then take them through a series of interactive messages explaining why they should donate. If everything worked perfectly, users who got the correct persona messaging would complete a donation.
+        
+
+
+    </p>
+    <div class="clearfix">
+      <h3>Design messages to be delivered</h3>
+      <p>
+        By interviewing parents and children, I built three personas and concluded that parents care most about reliable and efficient AQI forecast and advices to protect their children, while children care most about their health and entertainment on smog days.
+      </p>
+      <div class="col-md-4 col-sm-6">
+        <img src="wbur/AL.jpg" alt="" style="box-shadow:0px 0px 3px #888888;"/>
+        <p class="center">
+          <i>Aspirational Learner</i>
+        </p>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <img src="wbur/WC.jpg" alt="" style="box-shadow:0px 0px 3px #888888;"/>
+        <p class="center">
+          <i>World Citizen</i>
+        </p>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <img src="wbur/LL.jpg" alt="" style="box-shadow:0px 0px 3px #888888;"/>
+        <p class="center">
+          <i>Lifelong Listener</i>
+        </p>
+      </div>
+    </div>
+    <p class="center">
+      <i>Visual Design for messages: <a href="http://publicradiobizlab.org/wbur/index_wbur.html">Why do you love WBUR?</a></i>
+    </p>
+    </section>
+    <!--
+
+    <div class="clearfix">
+      <h2 style="margin-top:20px;">Understsanding Users</h2>
+      <p>
+        By interviewing parents and children, I built three <a href="https://en.wikipedia.org/wiki/Persona_(user_experience)">personas</a> and concluded that parents care most about reliable and efficient AQI forecast and advices to protect their children, while children care most about their health and entertainment on smog days.
+      </p>
+      <div class="col-md-4 col-sm-6">
+        <img src="image/airc/persona1.png" alt="" style="box-shadow:0px 0px 3px #888888;"/>
+        <p class="center">
+          <i>A Busy Father</i>
+        </p>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <img src="image/airc/persona2.png" alt="" style="box-shadow:0px 0px 3px #888888;"/>
+        <p class="center">
+          <i>A Housewife</i>
+        </p>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <img src="image/airc/persona3.png" alt="" style="box-shadow:0px 0px 3px #888888;"/>
+        <p class="center">
+          <i>Kids</i>
+        </p>
+      </div>
+    </div>
+  
+    <div class="clearfix">
+      <h2>Experiment result</h2>
+      <p>
+          To evaluate our donation personas, we ran ads on Facebook for three days pointing to our persona donation experiment. As outlined in our previous blog post, we wanted to determine two things with the experiment: if the personas reflect unique populations in our listener audience and, if we communicated to in the language and perspective of their personas, if listeners will engage more with us. From these ads, we had 406 participants in the experiment. Below is a summary of our discoveries and observations.
+      </p>
+      <img src="image/airc/marketing-research.png" alt="" style="padding:2% 0;"/>
+    </div>
+  -->
+
+</section>
+<!--
+<section class="page clearfix grey">
+  <h1 class="center">The experiment result</h1>
+  <p>
+      To evaluate our donation personas, we ran ads on Facebook for three days pointing to our persona donation experiment. As outlined in our previous blog post, we wanted to determine two things with the experiment: if the personas reflect unique populations in our listener audience and, if we communicated to in the language and perspective of their personas, if listeners will engage more with us. From these ads, we had 406 participants in the experiment. Below is a summary of our discoveries and observations.
+  </p>
+  <div class="col-md-12">
+    <img src="wbur/FB.png" alt="" style="width:96%;" />
+    <p class="center">
+      <i>Advertisement in Facebook news feed: <a href="http://publicradiobizlab.org/wbur/index_wbur.html">Why do you love WBUR?</a></i>
+    </p>
+  </div>
+    <h2>Finding: Overlapping Personas</h2>
+    <h2>Observation: Significant Drop Off Through the Funnel</h2>
+    <h2>Observation: Scrolling through Persona Messages</h2>
+    <h2>Finding: Our Donors are Engaged</h2>
+    <br><i>Read more in the published blog <a href="http://publicradiobizlab.org/2018/09/donation-personas-results/">"Donation Personas: Result"</a></i>
+  
+  </section>-->
+
+  <section class="page clearfix"  >
+      <h1>Express Findings</h1>
+      <p class="text">
+         
+        </p>
+        <div class="clearfix">
+            <h3 style="margin-top:20px;">PRESENTATION</h3>
+              <p><a href="https://prezi.com/view/Rp0j6K9oBHqyuSEkFA90/"><i><b>What do we know from the persona experiment?</b></i></a></p>
+            <h3 style="margin-top:20px;">BLOGS</h3>
+            <p>
+              <i><b>1. <a href="http://publicradiobizlab.org/2018/08/the-persona-experiment-it-is-no-longer-just-a-radio-experience/">It is no logner just a radio experience</a><br>
+              2. <a href="http://publicradiobizlab.org/2018/08/wbur-personas/">Creating WBUR Personas</a><br>
+              3. <a href="http://publicradiobizlab.org/2018/09/persona-experiment-design/">Donation Personas: The Experiment Design</a> <br>
+              4. <a href="http://publicradiobizlab.org/2018/09/donation-personas-results/">Donation Personas: Result</a> <br>
+            </b></i>    
+            </p>
+            
+        
+         
+        </div>
+    </section>
+
+    <section class="page clearfix grey" >
+        <h1>REFLECTION</h1>
+        <h3>What did I learn?
+          <ul>
+              <li>Ethnographic research
+              
+          </ul>
+          <h3>What would I have done diferently?
+          <ul><li>Projects I supported
+              
+            </ul>
+          <!--
+        <div class="">
+          <img src="image/airc/smog1.jpg" alt="" style="width:48%; margin-right:3%;"/>
+          <img src="image/airc/smog2.png" alt="" style="width:48%;"/>
+          <p class="center">
+            <i>Children in China Do NOT Get the Right Protection in Smog</i>
+          </p>
+        </div>-->
+      </section>
+
+
+  <!--
+  <div class="clearfix">
+    <h2>Ideation: Eight Solutions</h2>
+    <p>
+      Based on the research insights, I started the design by sketching out different solutions, ranging from a mobile app to pervasive interactions such as smart mask.
+      I came up with 8 approaches to help parents keep their children safe and entertained on smog days.
+    </p>
+    <img src="image/airc/8solutions.png" alt="" />
+    <p class="center">
+      <i>Eight Approaches to the Challenge</i>
+    </p>
+  </div>
+  <div class="clearfix">
+    <h2>Use Cases &amp; Contexts</h2>
+    <p>
+      To understand how users would use AirC, I tried to discover the stories of the primary persona of a busy father who wants to protect his child from the smog and at the same time keep the kid from being bored.
+      I set up five stories settings and mapped them together to gain more insights:
+    </p>
+    <div class="image-box">
+      <a class="example-image-link" href="image/airc/storymap.png"
+      data-lightbox="example-set" data-title="">
+        <img class="example-image" src="image/airc/storymap.png" alt=""/>
+      </a>
+      <h4  class="center" style="margin-bottom:40px;">
+        <i>Story Mapping: User Activities and Tasks in Different Settings (Click to enlarge the image)</i>
+      </h4>
+    </div>
+    <!-- <img src="image/airc/storymap.png" alt="" />
+    <p class="center">
+      <i>Story Mapping: User Activities and Tasks in Different Settings</i>
+    </p> 
+    <p>
+      Based on the story mapping, I concluded that the most important features are accurate air quality forecast, interpretation of the air quality index, advices on how to protect children, and connecting devices to monitor home conditions.
+      Therefore, I decided to go with a mobile application as it is the best way to synthesize these features together.
+    </p>
+  </div>
+  <div class="clearfix">
+    <h2>Design Synthesis &amp; Defense: Narrowing Down to One Solution</h2>
+    <p>
+      After the story mapping, I used the QOC (Questions, Options, Criteria) method to help me decide how should implement the different features.
+    </p>
+    <img src="image/airc/qoc.png" alt="" />
+    <p class="center">
+      <i>Design Rationale (solid line is for the criteria, dot line is against the criteria)</i>
+    </p>
+
+  </div>
+</section>
+
+
+
+<section class="page clearfix">
+  <h1 class="center">Rapid Prototyping</h1>
+  <p>
+    To validate my research ideas and the initial design, I conducted a round of rapid prototyping and tested with users.
+  </p>
+  <div class="clearfix">
+    <h2>Paper Prototyping</h2>
+    <p>
+      The first iteration is rapid prototyping on paper.
+      I sketched a mobile app interface with five tabs: dashbaord, forum, add post, air map, device.
+    </p>
+    <img src="image/airc/paper-prototype.png" alt=""  style="padding:0 1%;"/>
+  </div>
+  <div class="clearfix">
+    <h2>Testing with Users</h2>
+    <div class="" style="padding:0;">
+      <p>
+        Then I <a href="https://www.youtube.com/embed/IW8wHRf5W0s" target="_blank">tested with two users</a> with the paper prototype and here are the major takeaways from the test:
+        <ul>
+          <li>The tips on dashboard are common-sense and not helpful enough</li>
+          <li>Some icons are vague and might cause confusion</li>
+          <li>The questions in the forum should be more organized</li>
+          <li>The post function might not be used often</li>
+        </ul>
+      </p>
+    </div>
+
+  </div>
+    <!-- <div class="">
+      <iframe width="100%" height="400" src="https://www.youtube.com/embed/IW8wHRf5W0s" frameborder="0" allowfullscreen></iframe>
+    </div> 
+    <div class="clearfix">
+      <h2>Key Features</h2>
+      <p>
+        After the rapid prototyping and user testings, I refined the product scope and identified the key features (icon credit to <a href="https://www.flaticon.com/authors/smashicons" target="_blank">Smashicons</a>).
+      </p>
+      <img src="image/airc/features.png" alt="" />
+    </div>
+
+</section>
+
+<section class="page clearfix grey">
+  <h1 class="center" style="margin-bottom:-50px;">Putting Together The Workflow</h1>
+</section>
+<div class="grey" style="">
+  <img src="image/airc/workflow.png" alt="" style="width:100%;padding:0%;"/>
+</div>
+
+
+
+<section class="page clearfix">
+  <h1 class="center">Design Details</h1>
+  <div class="clearfix">
+    <h2>Dashboard</h2>
+    <p>
+      Parents can view current air quality, air forecast, and tips to prepare for their children. They can also control connected devices on the dashboard.
+    </p>
+    <img src="image/airc/dashboard.png" alt="" />
+  </div>
+  <div class="clearfix">
+    <h2>Air Map</h2>
+    <p>
+      Another design highlight is the Air Map function where users can get a comprehensive and intuitive view of
+      the air conditions nearby as well as across China.
+    </p>
+    <img src="image/airc/map.png" alt="" />
+  </div>
+
+  <div class="clearfix">
+    <h2>Devices</h2>
+    <p>
+      Parents can also connect to any supported devices, e.g. air purifiers, and monitor home conditions to make sure that children at home are in a healthy environment.
+    </p>
+    <img src="image/airc/device.png" alt="" />
+  </div>
+  <div class="clearfix">
+    <h2>Notifications</h2>
+    <p>
+      I use a combination of push notifications, in-app banners, and widgets to provide accurate and timely forecast.
+    </p>
+    <img src="image/airc/notification.png" alt="" />
+  </div>
+  <div class="clearfix">
+  <div class="clearfix">
+    <h2>Design for the Eco-system</h2>
+    <p>
+      To help parents get notifications and forecast more easily and control connected devices remotely,
+      I designed the smartwatch mini-app which supports the basic but essential functions.
+    </p>
+    <img src="image/airc/watch.png" alt="" />
+  </div>
+  <div class="clearfix">
+    <h2>Design Guidelines</h2>
+    <p>
+      I followed the iOS 10 design guidelines and selected different color state and icons to show weather and air quality states.
+      I also designed a clear font hierarchy and button style.
+    </p>
+    <img src="image/airc/guide.png" alt="" />
+  </div>
+
+    <h2 style="margin-top:40px;">Prototyping</h2>
+    <p>
+      I created a working <a href="https://invis.io/3UBAUD6EH" target="_blank">prototype</a> in InVision to demonstrate the functionalities and design of interactions.
+      Here are two snapshots of the dashboard and forum interactions.
+    </p>
+
+  <div class="clearfix" style="margin-top:80px;">
+    <div class="col-sm-6" style="padding:0;">
+      <div class="" style="margin-top:40%;">
+        <h2>Dashboard Interactions</h2>
+        <p class="sm-hide">Parents can view current air quality, air forecast, and tips to prepare for their children. They can also control connected devices on the dashboard.        </p>
+      </div>
+    </div>
+    <div class="col-sm-6" style="padding:0 10%;">
+      <div class="">
+        <img src="image/nsportc/phonecase.png" alt="" />
+      </div>
+      <div class="" style="position:absolute; top:11.6%;left:24.1%;width:51.5%;">
+        <img src="image/airc/dashboard.gif" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix" style="margin-top:80px;">
+    <div class="col-sm-6" style="padding:0;">
+      <div class="" style="margin-top:40%;">
+        <h2>Forum Interactions</h2>
+        <p class="sm-hide">Parents can ask questions on how to protect in smog. There will be professionals as well as other parents active on the forum, which forms a social group.         </p>
+      </div>
+    </div>
+    <div class="col-sm-6" style="padding:0 10%;">
+      <div class="">
+        <img src="image/nsportc/phonecase.png" alt="" />
+      </div>
+      <div class="" style="position:absolute; top:11.6%;left:24.1%;width:51.5%;">
+        <img src="image/airc/forum.gif" alt="">
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<section class="page clearfix grey">
+    <h1 class="center">Impacts</h1>
+    <p>
+      The impact AirC aims to make is to inform parents the AQI and provide solutions to
+      <b>protect children more effectively</b>.
+      Currently, most parents in China do not know what to do in polluted days and some of their actions
+      to protect their kids are useless or even wrong.
+    </p>
+    <p>
+      In addition to providing solutions,
+      I hope that AirC will also help users know the seriousness of air pollution and inform them to
+      <b>act actively to protect our living environment</b>!
+    </p>
+</section>
+
+
+
+<div class="backtotop">
+  <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+</div>
+<footer class="end-nav">
+  <a class="previous" href="adobe.html">
+    <p>< PREV</p>
+    <p class="project">
+      &nbsp;&nbsp;Adobe PPM 2.0
+    </p>
+  </a>
+  <a class="next" href="nsportc.html">
+    <p>NEXT ></p>
+    <p class="project">
+      NSportC&nbsp;&nbsp;
+    </p>
+  </a>
+
+</footer>
+-->
+<script src="../p_js/js/lightbox-plus-jquery.min.js"></script>
+</body>
+
+</html>
