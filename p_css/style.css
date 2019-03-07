@@ -185,8 +185,7 @@ img {
 h4{
   font-family: "open Sans", serif;
   font-size: 16px;
-  font-weight: 300;
-  line-height: 180%;
+  font-weight: 400;
 }
 section.page h4 li{
   font-size: 16px;
@@ -775,6 +774,10 @@ table{
   float: right;
   line-height: 200%;
   margin-top: -15px;
+  margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 .clearfix:after {
   content: '.';
@@ -885,6 +888,16 @@ footer{
   padding: 10px;
   min-height: 90px;
 }
+th {
+  text-align: center;
+  font-size:14px;
+}
+td{
+  text-align: center;
+  font-size:14px;
+
+}
+
 .box h4 {
   font-weight: bold;
   text-transform: uppercase;
