@@ -397,8 +397,9 @@
         <li><b>If we communicated to users in the language and perspective of their persona, that they will engage more with us?</b></li> 
         </ul>
       <p>As a reminder, the 3 personas are the <b>Aspirational Learner, the World Citizen, and the Lifelong Listener</b> which represent why someone listens to WBUR: either to get smarter, to track the news, or to feel an emotional connection.</p>
-
-       <p> The structure of the experiment was to find users loyal to WBUR via Facebook Ads, ask them a question to have them self-select their persona, and then take them through a series of interactive messages explaining why they should donate. If everything worked perfectly, users who got the correct persona messaging would complete a donation.
+      <h4>Experimental design</h4>
+       <p> The structure of the experiment was to find users loyal to WBUR via Facebook Ads, ask them a question to have them self-select their persona, and then take them through a series of interactive messages explaining why they should donate. If everything worked perfectly, users who got the correct persona messaging would complete a donation. 
+         <p>We used Between group experimental design, users will be matched to one persona by self-selection, and they will randomly receive 1 of the 3 messages. Users who received bthe message designed for self-selected persona will be in experimental group, users who reveice the other messages are in control group.
         
 
 
@@ -437,12 +438,13 @@
       <p>
       We distilled each persona down into a statement about loving WBUR and then used that phrase to get users to self-select into one of our personas. Because Aspirational Learners are focused on content and learning, they would agree with “I learn more when listening to WBUR.” Because World Citizens are focused on the news around the world, they would align with the statement, “I rely on WBUR to keep me informed about the world.” And our Lifelong Listeners, who think of WBUR as a daily companion, would agree with “WBUR is an essential part of my day.”</p>
       <div class="col-lg-6 col-dm-12">
+        <br><br><br><br>
           <p>So the flow our experiment first had users <i><b>answer a question about why they love WBUR</b></i>, and then from that moment forward they would see a message aligned to their values:</p>
   </div>
       <div class="col-lg-6 col-dm-12">
           <img src="wbur/wdlwbur.png" alt="" style="width: 70%;"/>
         </div>
-        <p>The exact text of each message is in the table below, with the green text highlighting where the text differed for each persona.</p>
+        <p>The exact text of each message is in the table below, with the red text highlighting where the text differed for each persona:</p>
         
         <table style="width:100%">
             <tr>
@@ -455,61 +457,71 @@
                   Lifelong Listener</th>
             </tr>
             <tr>
-                <th style="align:left;">1: State our mission</th>
-                <td>A key part of our mission is to educate listeners with fresh and informative content.</td> 
-                <td>A key part of our mission is to get you the latest and most important news of the day.</td>
-                <td>A key part of our mission is to provide you compelling programming, 24 hours a day.</td>
+                <th style="text-align:left;">1: State our mission</th>
+                <td>A key part of our mission is to <a>educate listeners with fresh and informative content</a>.</td> 
+                <td>A key part of our mission is to <a>get you the latest and most important news of the day</a>.</td>
+                <td>A key part of our mission is to <a>provide you compelling programming, 24 hours a day</a>.</td>
               
             </tr>
             <tr>
-              <th>2: Remind them of our work</th>
+              <th style="text-align:left;">2: Remind them of our work</th>
               <td>It takes WBUR over 50 staff hours to produce one hour of WBUR.</td>
               <td>It takes WBUR over 50 staff hours to produce one hour of WBUR.</td>
               <td>It takes WBUR over 50 staff hours to produce one hour of WBUR.</td>
             </tr>
             <tr>
-              <th>3: Share a data point about funding</th>
+              <th style="text-align:left;">3: Share a data point about funding</th>
               <td>Only the first 2 minutes of each day are covered by government funding.</td>
               <td>Only the first 2 minutes of each day are covered by government funding.</td>
               <td>Only the first 2 minutes of each day are covered by government funding.</td>
             </tr>
             <tr>
-              <th>4: Explain the impact of a donation</th>
-                <td>$75 supports 1 additional minute providing in-depth learning for all our listeners!</td>
-                <td>$75 supports 1 additional minute providing real-time updates for all our listeners!</td>
-                <td>$75 supports 1 additional minute providing daily discussion with all our listeners!</td>
+              <th style="text-align:left;">4: Explain the impact of a donation</th>
+                <td>$75 supports 1 additional minute <a>providing in-depth learning for all our listeners!</a></td>
+                <td>$75 supports 1 additional minute <a>providing real-time updates for all our listeners!</a></td>
+                <td>$75 supports 1 additional minute <a>providing daily discussion with all our listeners!</a></td>
               </tr>
           </table>
-      <h4>Sample size</h4>
+          <h4>User experience for: <a href="http://publicradiobizlab.org/wbur/index_wbur.html">Why do you love WBUR?</a></h4>
+          <p>The core messaging experience is presented in a custom, mobile-friendly web page. It is designed as a scrolling one-page site so we can can control the experiment conditions by pointing users to different pages and track engagement by tracking scroll depth and button clicks. We used Google’s suite of analytics tools, including <a href="https://optimize.google.com/optimize/home/#/accounts">Optimize</a>, for splitting experimental conditions and tracking.
+          <p>Using Optimize and Facebook’s built-in A/B testing, we randomized the messaging a person received, so 80% of people got the message aligned to their persona and 20% of the people saw a message aligned to an incorrect persona. If someone selected “all of the above,” they had a 33.3% chance of seeing each message.
+            <p>Below are miniature screenshots of each persona’s experience. You can also check out the experience yourself with our prototype: <a href="http://publicradiobizlab.org/wbur/index_wbur.html">Why do you love WBUR?</a>
+            <div class="col-md-4 col-sm-6">
+              <img src="wbur/AL.jpg" alt="" style="box-shadow:0px 0px 3px #888888;"/>
+              <p class="center">
+                <i>Aspirational Learner</i>
+              </p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <img src="wbur/WC.jpg" alt="" style="box-shadow:0px 0px 3px #888888;"/>
+              <p class="center">
+                <i>World Citizen</i>
+              </p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <img src="wbur/LL.jpg" alt="" style="box-shadow:0px 0px 3px #888888;"/>
+              <p class="center">
+                <i>Lifelong Listener</i>
+              </p>
+            </div>
+          </div>
+          
       <h4>Recruiting</h4>
-      <h4>Implementation</h4>
+      <div class="col-lg-6">
+        <br><br>
+      <p>To recruit listeners into this experience, we used Facebook ads to identify fans of WBUR and NPR within the Boston area. We created a 4 card carousel Facebook ad (see below). The first three have the three sentences and a persona icon to represent the reason for listening to WBUR, the final card had the label “All of the above.” We offered “All of the above” to find out how much our personas overlap. If everyone chooses “All of the above”, we will learn that our personas do not represent unique reasons for listening to WBUR.
+        </div>
+  
+        <div class="col-lg-6">
+              <img src="wbur/4card.png" alt="" style="width:80%;"/>
+            </div>
+        <h4>Implementation</h4>
 
 
 
       <p>
       </p>
-      <div class="col-md-4 col-sm-6">
-        <img src="wbur/AL.jpg" alt="" style="box-shadow:0px 0px 3px #888888;"/>
-        <p class="center">
-          <i>Aspirational Learner</i>
-        </p>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <img src="wbur/WC.jpg" alt="" style="box-shadow:0px 0px 3px #888888;"/>
-        <p class="center">
-          <i>World Citizen</i>
-        </p>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <img src="wbur/LL.jpg" alt="" style="box-shadow:0px 0px 3px #888888;"/>
-        <p class="center">
-          <i>Lifelong Listener</i>
-        </p>
-      </div>
-    </div>
-    <p class="center">
-      <i>Visual Design for messages: <a href="http://publicradiobizlab.org/wbur/index_wbur.html">Why do you love WBUR?</a></i>
-    </p>
+      
     </section>
     <!--
 
@@ -568,7 +580,7 @@
   
   </section>-->
 
-  <section class="page clearfix"  >
+  <section class="page clearfix grey"  >
       <h1>Express Findings</h1>
       <p class="text">
          
@@ -590,7 +602,7 @@
         </div>
     </section>
 
-    <section class="page clearfix grey" >
+    <section class="page clearfix" >
         <h1>REFLECTION</h1>
         <h3>What did I learn?
           <ul>
