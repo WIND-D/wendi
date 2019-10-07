@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable = yes">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Olympic Feathers" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://nbremer.github.io/olympicfeathers/" />
+    <meta property="og:description" content="Olympics Feathers - All ±5000 gold medallists visualized" />
+
+    <title>What can we know from support tickets? </title>
+    <meta name="author" content="WendiDing">
+    <meta name="description" content="Olympics Feathers - All ±5000 gold medallists visualized">
+    <meta name="keywords" content="data, visualization, visualisation, data visualization, data visualisation, information, information visualization, information visualisation, dataviz, datavis, infoviz, infovis, collaboration, data art">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500" rel="stylesheet">
+
+    <!-- Styling -->
+    <link href="../Ticket-Analysis/css/style.css" rel="stylesheet">
+
+    <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+    <script src="../Ticket-Analysis/plugins/d3.js"></script>
+    <script type="text/javascript" src="http://kozea.github.com/pygal.js/latest/pygal-tooltips.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <div id="olympic-wrapper">
+
+        <div class="olympic-section-wrapper head-title-wrapper" style="grid-column: 1 / span 1; grid-row: 1 / 2;">
+            <h1 id="olympic-top-title">Product X<br/>SUPPORT TICKETS</h1>
+            <h3 id="olympic-top-subtitle">Salesforce<br>since 2016 Jun</h3>
+        </div>
+
+        <div class="olympic-section-wrapper" style="grid-column: 2 / span 3; grid-row: 1 / 2;">
+            <div id="olympic-introduction">
+                <p class="bold-start">This project is an analysis of Jira & Salesforce support tickets for Product X. The timeline of the tickets starts from 2016 Jun to now. Implementing quantitative research on knowing what and followed qualitative research on learning how.
+                    This project is dedicating to help stakeholders make data-informed design decisions from a broader sight. What can we know from the ticket analysis?</p>
+                <p class="bold-start">
+                    What feature buckets do we have?
+                    <p>By generally clustering the tickets, they are leaning to several center points which we group tickets have short distance with those points and name the groups as feature buckets. <br>The process:</p>
+
+                    <ul>
+
+                        <li>Based on words popped up from “Bag of words” algorithm </li>
+                        <li>Group similar words into feature bucket </li>
+                        <li>Categorize ~100 tickets into feature buckets as the training sample</li>
+                        <li>Categorize the rest ticket into feature buckets with <a href="https://www.ibm.com/watson/services/natural-language-classifier/">Watson studio’s Natural language classifier service</a>
+
+                        </li>
+                    </ul>
+                </p>
+                <p class="bold-start">What are the usability issues each feature bucket reflects?<br> How is the heuristics' distribution for each feature bucket?<br> How is the distribution over time? </p>
+                The usability issue each ticket reflects can categorize the ticket into one of <a href="https://www.nngroup.com/articles/ten-usability-heuristics/">10 Heuristics</a>, which provides an all-around evaluation of user experience. Each ticket
+                also has status showing if it is an archived, a working on or a fresh new ticket, telling what has been done in the past and what needs to be done now. Putting tickets into the crossing of 2 dimensions: Heuristics, ticket status, showing
+                for Each feature bucket:
+                <ul>
+                    <li>which feature/changes has the team made to address usability issues?</li>
+                    <li>what features/changes should the team consider to work on?</li>
+                </ul>
+
+            </div>
+        </div>
+
+        <!-- THE chart -->
+
+        <!-- Pygal render() result:-->
+
+        <div class="olympic-section-wrapper head-title-wrapper" style="grid-row: 2 / span 1;grid-column:1/2">
+            <h1 class="story-title">No. tickets</h1>
+        </div>
+
+        <div class="olympic-section-wrapper" style="grid-row: 2 / 3;grid-column:2/span 2;">
+
+            <embed type="image/svg+xml" src="data.svg" width="100%" />
+
+        </div>
+        <div class="olympic-section-wrapper" style="grid-row: 2 / 3;grid-column:4/span 2;">
+            <div id="olympic-feather-legend" style="width:100%">
+                <p class="bold-start">[Product X] 314 support tickets on usability issues</p>
+                <p>1000 support tickets from Salesforce and Jira are deduplicated to 900 unique ones, 600 of which are back-end related issues. The below analysis is focusing on the 300 front-end tickets regarding usability issues.</p>
+                </p>
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="olympic-section-wrapper head-title-wrapper" style="grid-column: 1 / 2; grid-row: 3 / 4;">
+            <h1 id="olympic-legend-title">Usability Heuristic Lollipops</h1>
+
+        </div>
+
+
+        <!-- legend -->
+        <div style="grid-column: 2 / span 2; grid-row: 3 / span 1;vertical-align:bottom">
+            <embed type="image/svg+xml" src="img/all.svg" style="transform:translate(10,10)" />
+        </div>
+        <div class="olympic-section-wrapper" style="grid-column:4 /span 2 ; grid-row:3/ span 1;">
+            <div id="olympic-feather-legend" style=" ">
+                <p>Each set of lollipops reflects the usability issues distribution for a specific bucket support tickets [e.g. feature bucket] over 3 status of support tickets: "Archived", "Working" and "New". The left set of lollipops presents distribution
+                    for Faspex tickets.
+                </p>
+
+            </div>
+            <embed type="image/svg+xml" src="img/legend.svg" />
+
+            <div id="olympic-feather-legend" style=" ">
+                <p class="bold-start">Horizontal lollipop represents </p>
+                <p>A horizontal lollipop is 1 specific heuristic issue distribution [e.g. error prevention] over tickets' status. It tells whether the bucket has significant usability issue of that heuristic.</p>
+
+            </div>
+
+            <div id="olympic-feather-legend" style=" margin-top:25px">
+                <p class="bold-start">Vertical lollipop represents </p>
+                <p>A vertical lollipop is a 10 heuristics' distribution regarding 1 specific tickets' status [e.g. New]. Looking through 'Archived', 'Working', 'New' lollipops, we can know if usability issues' distribution shift over time.
+                </p>
+                </p>
+
+
+            </div>
+        </div>
+        <div class="olympic-section-wrapper head-title-wrapper" style="grid-column: 1 / 2; grid-row: 4 / 5;">
+            <h1 id="olympic-legend-title">FASPEX<br>Feature buckets</h1>
+
+        </div>
+
+
+        <div class="olympic-section-wrapper" style="grid-row: 4/5; grid-column:2/span 3;">
+
+            <embed type="image/svg+xml" src="img/treemap.svg" width="100%" />
+
+        </div>
+        <div class="olympic-section-wrapper" style="grid-row: 4/5; grid-column:5/span 1;margin-top:46%">
+            <div id="olympic-feather-legend">
+                <p class="bold-start">7 feature buckets</p>
+                <p>1000 support tickets from Salesforce are deduplicated to 900 unique ones, 600 of which are back-end related issues. The feature buckets are categorized from the 300 front-end tickets regarding usability issues.</p>
+                </p>
+                <p class="bold-start">[Hover the legend to see each feature bucket]</p>
+                </p>
+            </div>
+
+        </div>
+        <div class="olympic-section-wrapper head-title-wrapper" style="grid-row: 5 / span 1;grid-column:1/2">
+            <h1 class="story-title">Feature 1<br> bucket</h1>
+            <div id="olympic-feather-legend" class="right" style=" margin-top:20%; grid-row: 5 / span 1;grid-column:1/2">
+                <i class="bold-start"><span class="highlight">"Comment from Development"</span></i><br>
+                <i class="bold-start"><span class="om">"Comment from Product"</span></i><br>
+                <i class="bold-start"><span class="id">Group same theme topics </span></i>
+            </div>
+        </div>
+
+        <div class="olympic-section-wrapper right past" style="grid-column: 2 /span 1 ; grid-row: 5 / span 1;">
+
+            <div id="olympic-feather-legend">
+                <ul>
+                    <li>Live progress </li>
+                    <li>In-time confirmation</li>
+                    <li>Configurable notification</li>
+                </ul>
+            </div>
+
+
+            <div id="olympic-feather-legend" class="past" style="margin-top:5%">
+                <p class="bold-start" style="color:#565656">Multiple level operation</p>
+                <p style="color:#565656">e.g. XXXXXXX</p>
+
+            </div>
+
+            <div id="olympic-feather-legend" class="aoc" style="margin-top:25%">
+                <p class="bold-start" style="color:#565656">Prevent error</p>
+                <ul style="margin-left:-25px;">
+                    <li>Indicating limitation</li>
+                    <li>Format correction</li>
+                </ul>
+            </div>
+            <div id="olympic-feather-legend" class="issue" style=" margin-top:%">
+                <p class="bold-start" style="color:#565656">Provide user info</p>
+                <p style="color:#565656">Suggest recipient</p>
+            </div>
+
+
+            <div id="olympic-feather-legend past" class="issue" style=" margin-top:55%">
+                <p>Error explanation</p>
+
+            </div>
+
+        </div>
+        <div class=" feature" style="grid-column: 3 / span 1; grid-row: 5 / span 1;">
+
+            <embed type="image/svg+xml" src="img/transfer.svg" />
+        </div>
+        <div class=" feature" style="grid-column: 3 / span 1; grid-row: 5 / span 1;z-index:-1;">
+            <embed type="image/svg+xml" src="img/transferl.svg" width="100%" />
+        </div>
+
+
+
+        <div class="olympic-section-wrapper" style="grid-column: 4 /span 1 ; grid-row: 5/ span 1;">
+
+            <div id="olympic-feather-legend" class="aoc" style=" bottom;">
+                <p class="bold-start"><span class="connect">Improve visibility</span> </p>
+                <ul style="margin-left:-25px;">
+                    <li>status explaination</li>
+                    <li>Multiple levels' status</li>
+                    <li>Configuration hierarchy</li>
+                    <li><span class="om">Switching</span></li>
+                </ul>
+            </div>
+
+            <div id="olympic-feather-legend" class="issue" style=" margin-top:28%">
+                <p class="bold-start"><span class="connect">Consistent status</span></p>
+                <p>Mismatch status info</p>
+            </div>
+
+            <div id="olympic-feather-legend" class="issue" style=" margin-top:4%">
+                <p class="bold-start">Provide recipient info</p>
+                <ul style="margin-left:-25px;">
+                    <li><span class="highlight">Differentiate </span><span class="om">with visual support</span></li>
+                    <li>Username, email address format correction</li>
+                </ul>
+            </div>
+            <div id="olympic-feather-legend" class="issue" style=" margin-top:12%">
+                <p class="bold-start"><span class="">Sort, filt, Search</span> in list view</p>
+
+            </div>
+            <div id="olympic-feather-legend" class="issue" style=" margin-top:12%">
+                <p class="bold-start">Better look of XXXX</p>
+            </div>
+
+            <div id="olympic-feather-legend" class="issue" style=" margin-top:15%">
+                <p class="bold-start"><span class="connect">Provide error recover instruction</span></p>
+
+            </div>
+        </div>
+        <div class="olympic-section-wrapper" style="grid-column: 5 /span 1 ; grid-row: 5/ span 1;">
+
+            <div id="olympic-feather-legend" class="aoc" style="margin-top:73%">
+
+                <i class="bold-start comment"><span class="connect">                
+                    "Related to XXXXX"</span> </i>
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <!-- Credits & Data -->
+        <div id="credits " style="grid-column: 1 / span 5; grid-row: 6 / span 1; ">
+            <div class="credit-bold ">Design concept with pen & (digital) paper, data wrangling in Excel, Python & coding with Pygal by <a href="https://w3.ibm.com/bluepages/profile.html?uid=4J3386897 ">Wendi Ding</a> <span class="credit-divider
+                ">|</span> <a href="https://www.ibm.com/cloud/aspera ">IBM Aspera</a></div>
+            <div class="credit-note ">With valuable design advice from Charles, Scott, Jake <span class="credit-divider ">|</span> Read all about the raw data, data preparation and preprocessing for the visualization <a href="https://github.ibm.com/Wendi-Ding/Ticket-Analysis ">here</a></div>
+        </div>
+
+    </div>
+
+    <!-- Tooltip -->
+    <div id="tooltip ">
+        <div id="tooltip-container ">
+            <div class="tooltip-event "></div>
+            <div class="tooltip-rule "></div>
+            <div class="tooltip-discipline "></div>
+
+            <div id="tooltip-athlete "></div>
+            <div id="tooltip-record "></div>
+            <div id="tooltip-country "></div>
+            <div id="tooltip-edition "></div>
+        </div>
+    </div>
+
+    <!-- Tooltip - Edition -->
+    <div id="tooltip-edition-wrapper ">
+        <div id="tooltip-edition-container ">
+            <div id="tooltip-edition-edition "></div>
+            <div id="tooltip-edition-city "></div>
+            <div id="tooltip-edition-continent "></div>
+        </div>
+    </div>
+
+    <script src="../Ticket-Analysis/js/script.js "></script>
+
+</body>
+
+</html>
