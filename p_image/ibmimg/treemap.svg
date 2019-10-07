@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" 
+    xmlns="http://www.w3.org/2000/svg" id="chart-2dafb017-3945-47d2-9ae0-da4d90092746" class="pygal-chart" viewBox="0 0 800 625">    <!--Generated with pygal 2.4.0 (lxml) ©Kozea 2012-2016 on 2019-09-23-->    <!--http://pygal.org-->    <!--http://github.com/Kozea/pygal-->
+    <defs>
+        <style type="text/css">#chart-2dafb017-3945-47d2-9ae0-da4d90092746{-webkit-user-select:none;-webkit-font-smoothing:antialiased;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .title{font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;font-size:16px}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .legends .legend text{font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;font-size:14px}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis text{font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;font-size:10px}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis text.major{font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;font-size:10px}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .text-overlay text.value{font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;font-size:16px}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .text-overlay text.label{font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;font-size:10px}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .tooltip{font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;font-size:14px}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 text.no_data{font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;font-size:64px}
+#chart-2dafb017-3945-47d2-9ae0-da4d90092746{background-color:transparent}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 path,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 line,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 rect,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 circle{-webkit-transition:150ms;-moz-transition:150ms;transition:150ms}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .graph &gt; .background{fill:transparent}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .plot &gt; .background{fill:rgba(255,255,255,1)}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .graph{fill:rgba(0,0,0,.87)}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 text.no_data{fill:rgba(0,0,0,1)}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .title{fill:rgba(0,0,0,1)}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .legends .legend text{fill:rgba(0,0,0,.87)}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .legends .legend:hover text{fill:rgba(0,0,0,1)}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis .line{stroke:rgba(0,0,0,1)}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis .guide.line{stroke:rgba(0,0,0,.54)}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis .major.line{stroke:rgba(0,0,0,.87)}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis text.major{fill:rgba(0,0,0,1)}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis.y .guides:hover .guide.line,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .line-graph .axis.x .guides:hover .guide.line,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .stackedline-graph .axis.x .guides:hover .guide.line,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .xy-graph .axis.x .guides:hover .guide.line{stroke:rgba(0,0,0,1)}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis .guides:hover text{fill:rgba(0,0,0,1)}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .reactive{fill-opacity:.8; stroke-opacity:.8}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .ci{stroke:rgba(0,0,0,.87)}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .reactive.active,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .active .reactive{fill-opacity:.8;stroke: #054ada;stroke-opacity:.9;stroke-width:4}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .ci .reactive.active{stroke-width:1.5}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .series text{fill:rgba(0,0,0,1)}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .tooltip rect{fill:rgba(255,255,255,1);stroke:rgba(0,0,0,1);-webkit-transition:opacity 150ms;-moz-transition:opacity 150ms;transition:opacity 150ms}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .tooltip .label{fill:rgba(0,0,0,.87)}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .tooltip .label{fill:rgba(0,0,0,.87)}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .tooltip .legend{font-size:.8em;fill:rgba(0,0,0,.54)}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .tooltip .x_label{font-size:.6em;fill:rgba(0,0,0,1)}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .tooltip .xlink{font-size:.5em;text-decoration:underline}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .tooltip .value{font-size:1.5em}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .bound{font-size:.5em}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .max-value{font-size:.75em;fill:rgba(0,0,0,.54)}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .map-element{fill:rgba(255,255,255,1);stroke:rgba(0,0,0,.54) !important}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .map-element .reactive{fill-opacity:inherit;stroke-opacity:inherit}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .color-0,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .color-0 a:visited{stroke:#ffffff;fill:#000000}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .color-1,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .color-1 a:visited{stroke:#ffffff;fill:#000000}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .color-2,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .color-2 a:visited{stroke:#ffffff;fill:#000000}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .color-3,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .color-3 a:visited{stroke:#ffffff;fill:#000000}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .color-4,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .color-4 a:visited{stroke:#ffffff;fill:#000000}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .color-5,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .color-5 a:visited{stroke:#ffffff;fill:#000000}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .color-6,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .color-6 a:visited{stroke:#ffffff;fill:#000000}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .text-overlay .color-0 text{fill:white}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .text-overlay .color-1 text{fill:white}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .text-overlay .color-2 text{fill:white}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .text-overlay .color-3 text{fill:white}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .text-overlay .color-4 text{fill:white}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .text-overlay .color-5 text{fill:white}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .text-overlay .color-6 text{fill:white}
+#chart-2dafb017-3945-47d2-9ae0-da4d90092746 text.no_data{text-anchor:middle}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .guide.line{fill:none}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .centered{text-anchor:middle}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .title{text-anchor:middle}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .legends .legend text{fill-opacity:1}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis.x text{text-anchor:middle}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis.x:not(.web) text[transform]{text-anchor:start}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis.x:not(.web) text[transform].backwards{text-anchor:end}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis.y text{text-anchor:end}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis.y text[transform].backwards{text-anchor:start}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis.y2 text{text-anchor:start}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis.y2 text[transform].backwards{text-anchor:end}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis .guide.line{stroke-dasharray:4,4}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis .major.guide.line{stroke-dasharray:6,6}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .horizontal .axis.y .guide.line,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .horizontal .axis.y2 .guide.line,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .vertical .axis.x .guide.line{opacity:0}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .horizontal .axis.always_show .guide.line,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .vertical .axis.always_show .guide.line{opacity:1 !important}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis.y .guides:hover .guide.line,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis.y2 .guides:hover .guide.line,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis.x .guides:hover .guide.line{opacity:1}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .axis .guides:hover text{opacity:1}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .nofill{fill:none}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .subtle-fill{fill-opacity:.2}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .dot{stroke-width:1px;fill-opacity:1}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .dot.active{stroke-width:5px}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .dot.negative{fill:transparent}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 text,#chart-2dafb017-3945-47d2-9ae0-da4d90092746 tspan{stroke:none !important}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .series text.active{opacity:1}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .tooltip rect{fill-opacity:.95;stroke-width:.5}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .tooltip text{fill-opacity:1}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .showable{5.3:hidden}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .showable.shown{5.3:visible}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .gauge-background{fill:rgba(229,229,229,1);stroke:none}#chart-2dafb017-3945-47d2-9ae0-da4d90092746 .bg-lines{stroke:transparent;stroke-width:2px}</style>
+        <script type="text/javascript">window.pygal = window.pygal || {};window.pygal.config = window.pygal.config || {};window.pygal.config['2dafb017-3945-47d2-9ae0-da4d90092746'] = {"dynamic_print_values": false, "truncate_label": null, "inner_radius": 0, "print_values": true, "xrange": null, "box_mode": "extremes", "title": "User interface related support tickets Overview", "legend_at_bottom_columns": null, "height": 625, "legend_at_bottom": true, "show_legend": true, "show_dots": true, "explicit_size": false, "y_labels_major": null, "show_minor_x_labels": true, "width": 800, "force_uri_protocol": "https", "half_pie": false, "style": {"major_label_font_family": "Consolas, \"Liberation Mono\", Menlo, Courier, monospace", "title_font_family": "Consolas, \"Liberation Mono\", Menlo, Courier, monospace", "stroke_opacity": ".8", "legend_font_family": "Consolas, \"Liberation Mono\", Menlo, Courier, monospace", "colors": ["#000000", "#2b2b2b", "#555555", "#808080"], "legend_font_size": 14, "no_data_font_family": "Consolas, \"Liberation Mono\", Menlo, Courier, monospace", "major_label_font_size": 10, "value_background": "rgba(229, 229, 229, 1)", "ci_colors": [], "label_font_family": "Consolas, \"Liberation Mono\", Menlo, Courier, monospace", "label_font_size": 10, "tooltip_font_size": 14, "value_font_size": 16, "font_family": "Consolas, \"Liberation Mono\", Menlo, Courier, monospace", "opacity": ".7", "foreground": "rgba(0, 0, 0, .87)", "plot_background": "rgba(255, 255, 255, 1)", "value_label_font_size": 10, "value_label_font_family": "Consolas, \"Liberation Mono\", Menlo, Courier, monospace", "background": "transparent", "no_data_font_size": 64, "value_colors": ["white", "white", "white", "white", "white", "white", "white"], "guide_stroke_dasharray": "4,4", "transition": "150ms", "foreground_subtle": "rgba(0, 0, 0, .54)", "value_font_family": "Consolas, \"Liberation Mono\", Menlo, Courier, monospace", "tooltip_font_family": "Consolas, \"Liberation Mono\", Menlo, Courier, monospace", "title_font_size": 16, "stroke_opacity_hover": ".8", "major_guide_stroke_dasharray": "6,6", "opacity_hover": "0.8", "foreground_strong": "rgba(0, 0, 0, 1)"}, "x_label_rotation": 0, "fill": false, "missing_value_fill_truncation": "x", "zero": 0, "margin_right": null, "interpolation_parameters": {}, "x_labels_major": null, "rounded_bars": null, "show_y_labels": true, "dots_size": 2.5, "show_y_guides": true, "show_minor_y_labels": true, "x_labels": null, "y_title": null, "order_min": null, "formatter": null, "disable_xml_declaration": false, "strict": false, "css": ["file://style.css", "file://graph.css"], "tooltip_fancy_mode": true, "defs": [], "show_only_major_dots": false, "y_label_rotation": 0, "show_x_labels": true, "min_scale": 4, "show_x_guides": false, "spacing": 10, "x_labels_major_count": null, "pretty_print": false, "tooltip_border_radius": 0, "interpolate": null, "js": ["//kozea.github.io/pygal.js/2.0.x/pygal-tooltips.min.js"], "y_labels": null, "stroke_style": null, "print_labels": true, "interpolation_precision": 250, "x_title": null, "y_labels_major_every": null, "logarithmic": false, "legends": ["Bucket 5", "Bucket 1", "Bucket 6", "Bucket 7", "Bucket 2", "Bucket 2", "Bucket 4"], "max_scale": 16, "print_zeroes": true, "no_data_text": "No data", "truncate_legend": null, "x_labels_major_every": null, "secondary_range": null, "legend_box_size": 12, "no_prefix": false, "stroke": true, "stack_from_top": false, "include_x_axis": false, "range": null, "classes": ["pygal-chart"], "margin_top": null, "margin_left": 0, "y_labels_major_count": null, "margin_bottom": null, "inverse_y_axis": false, "margin": 20, "allow_interruptions": false, "print_values_position": "center"}</script>
+        <script type="text/javascript" xlink:href="https://kozea.github.io/pygal.js/2.0.x/pygal-tooltips.min.js"/>
+    </defs>
+    <title>User interface related support tickets Overview</title>
+    <g class="graph treemap-graph vertical">
+        <rect class="background" height="625" width="800" x="0" y="0"/>
+        <g class="plot" transform="translate(-10, 46)">
+            <rect class="background" height="493.0" width="760" x="0" y="0"/>
+            <g class="series serie-0 color-0">
+                <g class="rects" transform="translate(-10, 10)">
+                    <g class="rect">
+                        <desc class="label">5.2</desc>
+                        <rect class="rect reactive tooltip-trigger" height="280.662645734" width="223.528720998" x="14.6153846154" y="202.856585036"/>
+                        <desc class="value">46</desc>
+                        <desc class="x centered">126.379745114</desc>
+                        <desc class="y centered">343.187907902</desc>
+                    </g>
+                    <g class="rect">
+                        <desc class="label">5.1</desc>
+                        <rect class="rect reactive tooltip-trigger" height="48.8108949102" width="223.528720998" x="14.6153846154" y="154.045690125"/>
+                        <desc class="value">8</desc>
+                        <desc class="x centered">126.379745114</desc>
+                        <desc class="y centered">178.451137581</desc>
+                    </g>
+                    <g class="rect">
+                        <desc class="label">5.5</desc>
+                        <rect class="rect reactive tooltip-trigger" height="82.3683851609" width="182.134513406" x="238.144105613" y="401.150845608"/>
+                        <desc class="value">11</desc>
+                        <desc class="x centered">329.211362316</desc>
+                        <desc class="y centered">442.335038189</desc>
+                    </g>
+                    <g class="rect">
+                        <desc class="label">5.4</desc>
+                        <rect class="rect reactive tooltip-trigger" height="127.296595249" width="182.134513406" x="238.144105613" y="273.85425036"/>
+                        <desc class="value">17</desc>
+                        <desc class="x centered">329.211362316</desc>
+                        <desc class="y centered">337.502547984</desc>
+                    </g>
+                    <g class="rect">
+                        <desc class="label">5.3</desc>
+                        <rect class="rect reactive tooltip-trigger" height="119.808560234" width="182.134513406" x="238.144105613" y="154.045690125"/>
+                        <desc class="value">16</desc>
+                        <desc class="x centered">329.211362316</desc>
+                        <desc class="y centered">213.949970243</desc>
+                    </g>
+                </g>
+            </g>
+            <g class="series serie-1 color-1" transform="translate(-10, 0)">
+                <g class="rects">
+                    <g class="rect">
+                        <desc class="label">1.1</desc>
+                        <rect class="rect reactive tooltip-trigger" height="144.564920895" width="179.246545434" x="14.6153846154" y="9.48076923077"/>
+                        <desc class="value">19</desc>
+                        <desc class="x centered">104.238657332</desc>
+                        <desc class="y centered">81.7632296781</desc>
+                    </g>
+                    <g class="rect">
+                        <desc class="label">1.2</desc>
+                        <rect class="rect reactive tooltip-trigger" height="144.564920895" width="226.416688969" x="193.861930049" y="9.48076923077"/>
+                        <desc class="value">24</desc>
+                        <desc class="x centered">307.070274534</desc>
+                        <desc class="y centered">81.7632296781</desc>
+                    </g>
+                </g>
+            </g>
+            <g class="series serie-2 color-2" transform="translate(0, 10)">
+                <g class="rects">
+                    <g class="rect">
+                     <desc class="label">6.3</desc>
+                        <rect class="rect reactive tooltip-trigger" height="103.223178002" width="184.974101381" x="420.278619019" y="380.296052767"/>
+                        <desc class="value">14</desc>
+                        <desc class="x centered">512.765669709</desc>
+                        <desc class="y centered">431.907641768</desc>
+                    </g>
+                    <g class="rect">
+                        <desc class="label">6.2</desc>
+                        <rect class="rect reactive tooltip-trigger" height="110.596262145" width="184.974101381" x="420.278619019" y="269.699790622"/>
+                        <desc class="value">15</desc>
+                        <desc class="x centered">512.765669709</desc>
+                        <desc class="y centered">324.997921695</desc>
+                    </g>
+                    <g class="rect">
+                        <desc class="label">6.1</desc>
+                        <rect class="rect reactive tooltip-trigger" height="29.492336572" width="184.974101381" x="420.278619019" y="240.20745405"/>
+                        <desc class="value">4</desc>
+                        <desc class="x centered">512.765669709</desc>
+                        <desc class="y centered">254.953622336</desc>
+                    </g>
+                </g>
+            </g>
+            <g class="series serie-3 color-3" transform="translate(20, 10)">
+                <g class="rects">
+                    <g class="rect">
+                        <desc class="label">authentication</desc>
+                        <rect class="rect reactive tooltip-trigger" height="29.1974132063" width="140.131894985" x="605.252720399" y="454.321817563"/>
+                        <desc class="value">3</desc>
+                        <desc class="x centered">675.318667892</desc>
+                        <desc class="y centered">468.920524166</desc>
+                    </g>
+                    <g class="rect">
+                        <desc class="label">7.2</desc>
+                        <rect class="rect reactive tooltip-trigger" height="214.114363513" width="140.131894985" x="605.252720399" y="240.20745405"/>
+                        <desc class="value">22</desc>
+                        <desc class="x centered">675.318667892</desc>
+                        <desc class="y centered">347.264635807</desc>
+                    </g>
+                </g>
+            </g>
+            <g class="series serie-4 color-4">
+                <g class="rects">
+                    <g class="rect">
+                        <desc class="label">2.3</desc>
+                        <rect class="rect reactive tooltip-trigger" height="46.1453369639" width="147.775452894" x="420.278619019" y="194.062117086"/>
+                        <desc class="value">5</desc>
+                        <desc class="x centered">494.166345466</desc>
+                        <desc class="y centered">217.134785568</desc>
+                    </g>
+                    <g class="rect">
+                        <desc class="label">2.2</desc>
+                        <rect class="rect reactive tooltip-trigger" height="27.6872021784" width="147.775452894" x="420.278619019" y="166.374914908"/>
+                        <desc class="value">3</desc>
+                        <desc class="x centered">494.166345466</desc>
+                        <desc class="y centered">180.218515997</desc>
+                    </g>
+                    <g class="rect">
+                        <desc class="label">2.1</desc>
+                        <rect class="rect reactive tooltip-trigger" height="156.894145677" width="147.775452894" x="420.278619019" y="9.48076923077"/>
+                        <desc class="value">17</desc>
+                        <desc class="x centered">494.166345466</desc>
+                        <desc class="y centered">87.9278420694</desc>
+                    </g>
+                </g>
+            </g>
+            <g class="series serie-5 color-5" transform="translate(10, 0)">
+                <g class="rects">
+                    <g class="rect">
+                        <desc class="label">3.2</desc>
+                        <rect class="rect reactive tooltip-trigger" height="182.15264591" width="112.309344199" x="568.054071912" y="58.0548081402"/>
+                        <desc class="value">15</desc>
+                        <desc class="x centered">624.208744012</desc>
+                        <desc class="y centered">149.131131095</desc>
+                    </g>
+                    <g class="rect">
+                        <desc class="label">3.1</desc>
+                        <rect class="rect reactive tooltip-trigger" height="48.5740389094" width="112.309344199" x="568.054071912" y="9.48076923077"/>
+                        <desc class="value">4</desc>
+                        <desc class="x centered">624.208744012</desc>
+                        <desc class="y centered">33.7677886855</desc>
+                    </g>
+                </g>
+            </g>
+            <g class="series serie-6 color-6" transform="translate(20, 0)">
+                <g class="rects">
+                    <g class="rect">
+                        <desc class="label">4.2</desc>
+                        <rect class="rect reactive tooltip-trigger" height="62.9254594963" width="65.0211992732" x="680.363416111" y="177.281994554"/>
+                        <desc class="value">3</desc>
+                        <desc class="x centered">712.874015748</desc>
+                        <desc class="y centered">208.744724302</desc>
+                    </g>
+                    <g class="rect">
+                        <desc class="label">4.1</desc>
+                        <rect class="rect reactive tooltip-trigger" height="167.801225323" width="65.0211992732" x="680.363416111" y="9.48076923077"/>
+                        <desc class="value">8</desc>
+                        <desc class="x centered">712.874015748</desc>
+                        <desc class="y centered">93.3813818924</desc>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g class="titles">
+            <text class="title plot_title" x="400.0" y="26"></text>
+        </g>
+        <g class="plot overlay" transform="translate(20, 46)">
+            <g class="series serie-0 color-0"/>
+            <g class="series serie-1 color-1"/>
+            <g class="series serie-2 color-2"/>
+            <g class="series serie-3 color-3"/>
+            <g class="series serie-4 color-4"/>
+            <g class="series serie-5 color-5"/>
+            <g class="series serie-6 color-6"/>
+        </g>
+        <g class="plot text-overlay" transform="translate(20, 46)">
+            <g class="series serie-0 color-0">
+                <text class="label" x="126.379745114" y="340.521241236">5.2</text>
+                <text class="value" text-anchor="left" x="126.379745114" y="356.521241236">46</text>
+                <text class="label" x="126.379745114" y="175.784470914">5.1</text>
+                <text class="value" text-anchor="left" x="126.379745114" y="191.784470914">8</text>
+                <text class="label" x="329.211362316" y="439.668371522">5.5</text>
+                <text class="value" text-anchor="left" x="329.211362316" y="455.668371522">11</text>
+                <text class="label" x="329.211362316" y="334.835881317">5.4</text>
+                <text class="value" text-anchor="left" x="329.211362316" y="350.835881317">17</text>
+                <text class="label" x="329.211362316" y="211.283303576">5.3</text>
+                <text class="value" text-anchor="left" x="329.211362316" y="227.283303576">16</text>
+            </g>
+            <g class="series serie-1 color-1">
+                <text class="label" x="70.238657332" y="79.0965630115">1.1</text>
+                <text class="value" text-anchor="left" x="104.238657332" y="95.0965630115">19</text>
+                <text class="label" x="280.070274534" y="79.0965630115">1.2</text>
+                <text class="value" text-anchor="left" x="307.070274534" y="95.0965630115">24</text>
+            </g>
+            <g class="series serie-2 color-2">
+                 <text class="label" x="512.765669709" y="420.331255028">6.3</text>
+                <text class="value" text-anchor="left" x="512.765669709" y="437.240975102">14</text>
+                <text class="label" x="512.765669709" y="322.331255028">6.2</text>
+                <text class="value" text-anchor="left" x="512.765669709" y="338.331255028">15</text>
+                <text class="label" x="512.765669709" y="260.28695567">6.1</text>
+                <text class="value" text-anchor="left" x="512.765669709" y="273.28695567">4</text>
+            </g>
+            <g class="series serie-3 color-3">
+                <text class="label" x="675.318667892" y="475.253857499">authentication</text>
+                <text class="value" text-anchor="left" x="665.318667892" y="482.253857499">3</text>
+                <text class="label" x="675.318667892" y="344.59796914">7.1</text>
+                <text class="value" text-anchor="left" x="675.318667892" y="360.59796914">22</text>
+            </g>
+            <g class="series serie-4 color-4">
+                <text class="label" x="494.166345466" y="214.468118902">2.3</text>
+                <text class="value" text-anchor="left" x="494.166345466" y="230.468118902">5</text>
+                <text class="label" x="494.166345466" y="177.551849331">2.2</text>
+                <text class="value" text-anchor="left" x="494.166345466" y="193.551849331">3</text>
+                <text class="label" x="494.166345466" y="85.2611754028">2.1</text>
+                <text class="value" text-anchor="left" x="494.166345466" y="101.261175403">17</text>
+            </g>
+            <g class="series serie-5 color-5">
+                <text class="label" x="624.208744012" y="146.464464429">3.2</text>
+                <text class="value" text-anchor="left" x="624.208744012" y="162.464464429">15</text>
+                <text class="label" x="624.208744012" y="31.1011220188">3.1</text>
+                <text class="value" text-anchor="left" x="624.208744012" y="47.1011220188">4</text>
+            </g>
+            <g class="series serie-6 color-6">
+                <text class="label" x="712.874015748" y="206.078057636">4.2</text>
+                <text class="value" text-anchor="left" x="712.874015748" y="222.078057636">3</text>
+                <text class="label" x="712.874015748" y="90.7147152258">4.1</text>
+                <text class="value" text-anchor="left" x="712.874015748" y="106.714715226">8</text>
+            </g>
+        </g>
+        <g class="plot tooltip-overlay" transform="translate(20, 46)">
+            <g class="tooltip" style="opacity: 0" transform="translate(0 0)">
+                <rect class="tooltip-box" height="0" rx="0" ry="0" width="0"/>
+                <g class="text"/>
+            </g>
+        </g>
+        <g class="legends">
+            <g class="legend reactive activate-serie" id="activate-serie-0" transform="translate(210, 549)">
+                <rect class="color-0 reactive" height="12" width="12" x="0.0" y="1.0"/>
+                <text x="17.0" y="11.2">Bucket 5</text>
+            </g>
+            <g class="legend reactive activate-serie" id="activate-serie-1" transform="translate(-43, 30)">
+                <rect class="color-1 reactive" height="12" width="12" x="253.333333333" y="1.0"/>
+                <text x="270.333333333" y="11.2">Bucket 1</text>
+            </g>
+            <g class="legend reactive activate-serie" id="activate-serie-2" transform="translate(-30, 549)">
+                <rect class="color-2 reactive" height="12" width="12" x="506.666666667" y="1.0"/>
+                <text x="523.666666667" y="11.2">Bucket 6</text>
+            </g>
+            <g class="legend reactive activate-serie" id="activate-serie-3" transform="translate(660, 527)">
+                <rect class="color-3 reactive" height="12" width="12" x="0.0" y="22.0"/>
+                <text x="17.0" y="32.2">Bucket 7</text>
+            </g>
+            <g class="legend reactive activate-serie" id="activate-serie-4" transform="translate(230, 8)">
+                <rect class="color-4 reactive" height="12" width="12" x="253.333333333" y="22.0"/>
+                <text x="270.333333333" y="32.2">Bucket 2</text>
+            </g>
+            <g class="legend reactive activate-serie" id="activate-serie-5" transform="translate(110, 8)">
+                <rect class="color-5 reactive" height="12" width="12" x="466.666666667" y="22.0"/>
+                <text x="483.666666667" y="32.2">Bucket 3</text>
+            </g>
+            <g class="legend reactive activate-serie" id="activate-serie-6" transform="translate(720, -13)">
+                <rect class="color-6 reactive" height="12" width="12" x="0.0" y="43.0"/>
+                <text x="11.0" y="53.2">Bucket 4</text>
+            </g>
+        </g>
+    </g>
+</svg>
