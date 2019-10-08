@@ -1,5 +1,5 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Karla', sans-serif;
     font-size: 12px;
     font-weight: 400;
 }
@@ -161,7 +161,7 @@ a:hover {
 .storytxt .bold-start,
 #olympic-introduction .bold-start,
 #olympic-feather-legend .bold-start {
-    font-weight: 500;
+    font-weight: 700;
     color: black;
     font-size: 14px;
 }
